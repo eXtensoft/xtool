@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46CC0B4E-700C-4729-9CD1-05F967245ED0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XTool</RootNamespace>
+    <AssemblyName>XTool</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MongoDB.Bson.2.7.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.10.0.62, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MongoDB.Driver.2.7.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\StackExchange.Redis.1.1.603\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApiCallBuilderView.xaml.cs">
+      <DependentUpon>ApiCallBuilderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="code\BetweenOption.cs" />
+    <Compile Include="code\converter\BooleanToFontWeightConverter.cs" />
+    <Compile Include="code\DateRange.cs" />
+    <Compile Include="code\encryption\AesEncryptor.cs" />
+    <Compile Include="code\encryption\EncryptionOption.cs" />
+    <Compile Include="code\encryption\TableDataEncryptor.cs" />
+    <Compile Include="code\LogStats.cs" />
+    <Compile Include="code\LogStatsProvider.cs" />
+    <Compile Include="view\encryption\DataEncryptionView.xaml.cs">
+      <DependentUpon>DataEncryptionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\log\ApiSession.cs" />
+    <Compile Include="model\log\LogSchema.cs" />
+    <Compile Include="view.model\log\ApiSessionViewModel.cs" />
+    <Compile Include="view\logging\StatsView.xaml.cs">
+      <DependentUpon>StatsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\logging\LogErrorDetailView.xaml.cs">
+      <DependentUpon>LogErrorDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApiScratchpadView.xaml.cs">
+      <DependentUpon>ApiScratchpadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="code\converter\IntToVisibilityConverter.cs" />
+    <Compile Include="code\discovery\sql\SqlObjectTypeOption.cs" />
+    <Compile Include="code\discovery\sql\SqlScript.cs" />
+    <Compile Include="code\http\HttpExtensionMethods.cs" />
+    <Compile Include="code\sql.compare\my.sql\MySqlTableComparer.cs" />
+    <Compile Include="code\sql.compare\sql.server\SqlServerTableComparer.cs" />
+    <Compile Include="code\SqlConnectionProvider.cs" />
+    <Compile Include="code\SqlHelper.cs" />
+    <Compile Include="code\TemplateCommandProvider.cs" />
+    <Compile Include="model\filtering\CustomFilterGroup.cs" />
+    <Compile Include="model\filtering\FilterGroup.cs" />
+    <Compile Include="model\filtering\FilterItem.cs" />
+    <Compile Include="model\filtering\FilterProvider.cs" />
+    <Compile Include="model\filtering\IFilterResolver.cs" />
+    <Compile Include="model\filtering\PropertyFilterGroup.cs" />
+    <Compile Include="model\log\ApiError.cs" />
+    <Compile Include="model\log\ApiRequest.cs" />
+    <Compile Include="model\log\TypedItem.cs" />
+    <Compile Include="view.model\log\ApiErrorViewModel.cs" />
+    <Compile Include="view.model\log\ApiRequestViewModel.cs" />
+    <Compile Include="view.model\log\CyclopsConnectionViewModel.cs" />
+    <Compile Include="view.model\log\CyclopsWorkspaceViewModel.cs" />
+    <Compile Include="view.model\log\FacetViewModel.cs" />
+    <Compile Include="view\logging\LogApiRequestView.xaml.cs">
+      <DependentUpon>LogApiRequestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\logging\LogErrorView.xaml.cs">
+      <DependentUpon>LogErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\logging\LogSessionView.xaml.cs">
+      <DependentUpon>LogSessionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\api\ApiHeader.cs" />
+    <Compile Include="model\api\AuthorizationRuntimeType.cs" />
+    <Compile Include="model\api\HeaderTypeOption.cs" />
+    <Compile Include="model\connection\templates\CommandTemplate.cs" />
+    <Compile Include="model\connection\templates\MongoDbCommandTemplate.cs" />
+    <Compile Include="model\connection\templates\MySqlCommandTemplate.cs" />
+    <Compile Include="model\connection\templates\SqlServerCommandTemplate.cs" />
+    <Compile Include="model\connection\templates\TemplateTypeOption.cs" />
+    <Compile Include="model\filters\NoFilterGroup.cs" />
+    <Compile Include="model\log\CyclopsConnection.cs" />
+    <Compile Include="model\log\Workspace.cs" />
+    <Compile Include="model\log\Selection.cs" />
+    <Compile Include="model\time.keeper\Note.cs" />
+    <Compile Include="model\time.keeper\Resource.cs" />
+    <Compile Include="model\time.keeper\Task.cs" />
+    <Compile Include="model\time.keeper\TimeEntry.cs" />
+    <Compile Include="model\TimeKeeperWorkspace.cs" />
+    <Compile Include="view\logging\SqlServerLogView.xaml.cs">
+      <DependentUpon>SqlServerLogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestWindow.xaml.cs">
+      <DependentUpon>TestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="time.keeper\TimekeeperManager.cs" />
+    <Compile Include="TimeKeeperProvider.cs" />
+    <Compile Include="view.model\log\SelectionViewModel.cs" />
+    <Compile Include="view.model\TimeKeeperWorkspaceViewModel.cs" />
+    <Compile Include="view\TimeEntryView.xaml.cs">
+      <DependentUpon>TimeEntryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\template.comands\TemplateCommandsView.xaml.cs">
+      <DependentUpon>TemplateCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view.model\connection.info\api\ApiHeaderViewModel.cs" />
+    <Compile Include="view.model\template.command\MongoDbTemplateCommandViewModel.cs" />
+    <Compile Include="view.model\template.command\MySqlTemplateCommandViewModel.cs" />
+    <Compile Include="view.model\template.command\SqlServerTemplateCommandViewModel.cs" />
+    <Compile Include="view.model\template.command\TemplateCommandViewModel.cs" />
+    <Compile Include="view\api\ApiCallView.xaml.cs">
+      <DependentUpon>ApiCallView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="code\http\ApiCall.cs" />
+    <Compile Include="code\http\ApiRequest.cs" />
+    <Compile Include="code\http\ApiResponse.cs" />
+    <Compile Include="code\http\HttpCaller.cs" />
+    <Compile Include="code\http\RequestHeader.cs" />
+    <Compile Include="model\api\ApiParameterSet.cs" />
+    <Compile Include="model\api\Dto.cs" />
+    <Compile Include="model\api\EndpointConverter.cs" />
+    <Compile Include="view.model\connection.info\api\ApiCallViewModel.cs" />
+    <Compile Include="view.model\connection.info\api\ApiEndpointViewModel.cs" />
+    <Compile Include="view.model\connection.info\api\ApiParameterSetViewModel.cs" />
+    <Compile Include="view.model\connection.info\api\ApiParameterViewModel.cs" />
+    <Compile Include="view.model\json\JArrayViewModel.cs" />
+    <Compile Include="view.model\json\JObjectViewModel.cs" />
+    <Compile Include="view.model\json\JPropertyViewModel.cs" />
+    <Compile Include="view.model\json\JsonViewParser.cs" />
+    <Compile Include="view.model\json\JTokenViewModel.cs" />
+    <Compile Include="view\shared\ConnectionStringsImportView.xaml.cs">
+      <DependentUpon>ConnectionStringsImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\api\ApiEndpointImportView.xaml.cs">
+      <DependentUpon>ApiEndpointImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\api\ApiEndpoint.cs" />
+    <Compile Include="model\api\ApiParameter.cs" />
+    <Compile Include="model\api\HttpMethodOption.cs" />
+    <Compile Include="view\api\ApiEndpointsView.xaml.cs">
+      <DependentUpon>ApiEndpointsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\api\ApiEndpointView.xaml.cs">
+      <DependentUpon>ApiEndpointView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\connection\api\ApiUrl.cs" />
+    <Compile Include="model\connection\api\ProtocolOption.cs" />
+    <Compile Include="view.model\connection.info\api\ApiUrlViewModel.cs" />
+    <Compile Include="view\datastore.explorer\ApiView.xaml.cs">
+      <DependentUpon>ApiView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\ApiShellView.xaml.cs">
+      <DependentUpon>ApiShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\ApiConnectionInfoView.xaml.cs">
+      <DependentUpon>ApiConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AsciiMapWindow.xaml.cs">
+      <DependentUpon>AsciiMapWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="code\AppConstants.cs" />
+    <Compile Include="code\BindableSelectedItemBehavior.cs" />
+    <Compile Include="code\Bootstrapper.cs" />
+    <Compile Include="code\Converters.cs" />
+    <Compile Include="code\converter\IntegerOnlyConverter.cs" />
+    <Compile Include="code\DataMap.cs" />
+    <Compile Include="code\DataMapper.cs" />
+    <Compile Include="code\DataMapProvider.cs" />
+    <Compile Include="code\DataTableReader.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\Case.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\DataMap.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\DbCommand.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\DbConfig.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\DbConfigCollection.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\Model.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\ModelAction.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\ModelActionOption.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\Parameter.cs" />
+    <Compile Include="code\discovery\idb.dataaccess.config\Switch.cs" />
+    <Compile Include="code\discovery\mongodb\Collection.cs" />
+    <Compile Include="code\discovery\mongodb\Database.cs" />
+    <Compile Include="code\discovery\mongodb\Index.cs" />
+    <Compile Include="code\discovery\mongodb\MongoExplorer.cs" />
+    <Compile Include="code\discovery\sql\CompareOption.cs" />
+    <Compile Include="code\discovery\sql\SqlExplorer.cs" />
+    <Compile Include="code\discovery\sql\SqlExplorerCollection.cs" />
+    <Compile Include="code\EnumExtensions.cs" />
+    <Compile Include="code\EnumSelector`1.cs" />
+    <Compile Include="code\ExtendedTreeView.cs" />
+    <Compile Include="code\ExtensionMethods.cs" />
+    <Compile Include="code\FileSystem.cs" />
+    <Compile Include="code\GenericObjectManager.cs" />
+    <Compile Include="code\Indent.cs" />
+    <Compile Include="code\mongo\Inquisitor.cs" />
+    <Compile Include="code\ListProvider.cs" />
+    <Compile Include="code\ModelConverter.cs" />
+    <Compile Include="code\MongoExtensions.cs" />
+    <Compile Include="code\mongo\MongoDbCommandTypeOption.cs" />
+    <Compile Include="code\OutputExtensions.cs" />
+    <Compile Include="code\OutputTypeOption.cs" />
+    <Compile Include="code\profiler.tab\AsciiMap.cs" />
+    <Compile Include="code\profiler.tab\AsciiMapCollection.cs" />
+    <Compile Include="code\profiler.tab\CharClassOption.cs" />
+    <Compile Include="code\profiler.tab\CharProfileItem.cs" />
+    <Compile Include="code\profiler.tab\CharProfileItemCollection.cs" />
+    <Compile Include="code\profiler.tab\CharTypes.cs" />
+    <Compile Include="code\profiler.tab\DataProfileField.cs" />
+    <Compile Include="code\profiler.tab\DataProfileFieldCollection.cs" />
+    <Compile Include="code\profiler.tab\DataProfileItem.cs" />
+    <Compile Include="code\profiler.tab\DataProfileItemCollection.cs" />
+    <Compile Include="code\profiler.tab\FieldFilter.cs" />
+    <Compile Include="code\profiler.tab\FieldTypeOption.cs" />
+    <Compile Include="code\profiler.tab\FieldTypeProfileItem.cs" />
+    <Compile Include="code\profiler.tab\FieldTypeProfileItemCollection.cs" />
+    <Compile Include="code\profiler.tab\FilterValue.cs" />
+    <Compile Include="code\profiler.tab\ProfilerSettings.cs" />
+    <Compile Include="code\profiler.tab\TabDataProfiler.cs" />
+    <Compile Include="code\RedisExtensionMethods.cs" />
+    <Compile Include="code\ScriptGenerator.cs" />
+    <Compile Include="code\sql.compare\Field.cs" />
+    <Compile Include="code\sql.compare\FieldBuilder.cs" />
+    <Compile Include="code\sql.compare\FieldComparison.cs" />
+    <Compile Include="code\sql.compare\FieldComparisonCollection.cs" />
+    <Compile Include="code\sql.compare\SqlComparer.cs" />
+    <Compile Include="code\view.model\common\SelectableGroupingViewModel.cs" />
+    <Compile Include="code\view.model\common\SelectableViewModel`1.cs" />
+    <Compile Include="code\view.model\data.profiler\FieldFilterViewModel.cs" />
+    <Compile Include="code\view.model\data.profiler\FilterValueViewModel.cs" />
+    <Compile Include="code\view.model\mongo\CollectionGroupingViewModel.cs" />
+    <Compile Include="code\view.model\mongo\CollectionViewModel.cs" />
+    <Compile Include="code\view.model\mongo\DatabaseGroupingViewModel.cs" />
+    <Compile Include="code\view.model\mongo\DatabaseViewModel.cs" />
+    <Compile Include="code\view.model\mongo\IndexViewModel.cs" />
+    <Compile Include="code\view.model\mongo\CommandViewModel.cs" />
+    <Compile Include="code\view.model\my.sql\MySqlCommandViewModel.cs" />
+    <Compile Include="code\WorkspaceProvider.cs" />
+    <Compile Include="model\connection\api\ApiConnectionInfo.cs" />
+    <Compile Include="model\filters\ConnectionTypeFilter.cs" />
+    <Compile Include="model\filters\ConnectionTypeFilterGroup.cs" />
+    <Compile Include="model\filters\Filter.cs" />
+    <Compile Include="model\filters\FilterGroup.cs" />
+    <Compile Include="model\filters\TagFilter.cs" />
+    <Compile Include="model\filters\TagFilterGroup.cs" />
+    <Compile Include="model\filters\ZoneFilter.cs" />
+    <Compile Include="model\filters\ZoneFilterGroup.cs" />
+    <Compile Include="model\SelectItem.cs" />
+    <Compile Include="view.model\connection.info\api\ApiConnectionInfoViewModel.cs" />
+    <Compile Include="view\connection.info\MySqlConnectionInfoView.xaml.cs">
+      <DependentUpon>MySqlConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\solution\code\ClassLibrary.cs" />
+    <Compile Include="view\solution\code\ClassLibraryCollection.cs" />
+    <Compile Include="view\solution\code\ClassLibraryReference.cs" />
+    <Compile Include="view\solution\code\CodeDomainOption.cs" />
+    <Compile Include="view\solution\code\CodeRefResolver.cs" />
+    <Compile Include="view\solution\code\CodeRefViewModel.cs" />
+    <Compile Include="view\solution\code\GenericSerializer.cs" />
+    <Compile Include="view\solution\code\ProjectFile.cs" />
+    <Compile Include="view\solution\code\ProjectReference.cs" />
+    <Compile Include="view\solution\code\ProjectRefViewModel.cs" />
+    <Compile Include="view\solution\code\ProjectTypeOption.cs" />
+    <Compile Include="view\solution\code\Reference.cs" />
+    <Compile Include="view\solution\code\Section.cs" />
+    <Compile Include="view\solution\code\sln.compare\CompareOption.cs" />
+    <Compile Include="view\solution\code\sln.compare\ReferenceField.cs" />
+    <Compile Include="view\solution\code\sln.compare\ReferenceFieldComparison.cs" />
+    <Compile Include="view\solution\code\sln.compare\ReferenceFieldComparisonCollection.cs" />
+    <Compile Include="view\solution\code\SolutionFile.cs" />
+    <Compile Include="view\solution\SolutionView.xaml.cs">
+      <DependentUpon>SolutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view.model\TemplateOutputView.xaml.cs">
+      <DependentUpon>TemplateOutputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\RedisKnownTypes.xaml.cs">
+      <DependentUpon>RedisKnownTypes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view.model\ComparisonFileInfoViewModel.cs" />
+    <Compile Include="view.model\FileInfoViewModel.cs" />
+    <Compile Include="view.model\SelectItemViewModel.cs" />
+    <Compile Include="view\comparer\SqlComparerView.xaml.cs">
+      <DependentUpon>SqlComparerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\shared\ExportDataReaderView.xaml.cs">
+      <DependentUpon>ExportDataReaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\shared\DataColumnDetailView.xaml.cs">
+      <DependentUpon>DataColumnDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\shared\DataTableDetailView.xaml.cs">
+      <DependentUpon>DataTableDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\file\FileFormatSelectorView.xaml.cs">
+      <DependentUpon>FileFormatSelectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\FileExplorerView.xaml.cs">
+      <DependentUpon>FileExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\ExcelExplorerView.xaml.cs">
+      <DependentUpon>ExcelExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\file\FileFinderView.xaml.cs">
+      <DependentUpon>FileFinderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view.model\connection.info\Neo4jConnectionInfoViewModel.cs" />
+    <Compile Include="view\connection.shell\JsonShellView.xaml.cs">
+      <DependentUpon>JsonShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\ExcelShellView.xaml.cs">
+      <DependentUpon>ExcelShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view.model\connection.info\file\ExcelConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\file\JsonConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\file\XmlConnectionInfoViewModel.cs" />
+    <Compile Include="view\connection.info\file\JsonConnectionInfoView.xaml.cs">
+      <DependentUpon>JsonConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\file\ExcelConnectionInfoView.xaml.cs">
+      <DependentUpon>ExcelConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\connection\file\JsonConnectionInfo.cs" />
+    <Compile Include="model\connection\file\XmlConnectionInfo.cs" />
+    <Compile Include="model\connection\mongodb\MongoDbCommand.cs" />
+    <Compile Include="model\connection\file\ExcelConnectionInfo.cs" />
+    <Compile Include="view\connection.info\RedisConnectionInfoView.xaml.cs">
+      <DependentUpon>RedisConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\mongo\MongoQueryExecutionView.xaml.cs">
+      <DependentUpon>MongoQueryExecutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\shared\ExportTabResultsetView.xaml.cs">
+      <DependentUpon>ExportTabResultsetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\Message.cs" />
+    <Compile Include="view\sql.objects\SqlTextEditorView.xaml.cs">
+      <DependentUpon>SqlTextEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\shared\TabDataProfilerView.xaml.cs">
+      <DependentUpon>TabDataProfilerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\sql.objects\SqlCommandView.xaml.cs">
+      <DependentUpon>SqlCommandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\sql.objects\SqlResultsetView.xaml.cs">
+      <DependentUpon>SqlResultsetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\sql.objects\SqlServerCommandsView.xaml.cs">
+      <DependentUpon>SqlServerCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\sql.objects\SqlStoredProcedureView.xaml.cs">
+      <DependentUpon>SqlStoredProcedureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\sql.objects\SqlTableView.xaml.cs">
+      <DependentUpon>SqlTableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\RedisExplorerView.xaml.cs">
+      <DependentUpon>RedisExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\MongoDbExplorerView.xaml.cs">
+      <DependentUpon>MongoDbExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="view\datastore.explorer\SqlExplorerView.xaml.cs">
+      <DependentUpon>SqlExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\Neo4jShellView.xaml.cs">
+      <DependentUpon>Neo4jShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\FileShellView.xaml.cs">
+      <DependentUpon>FileShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\MySqlShellView.xaml.cs">
+      <DependentUpon>MySqlShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\RedisShellView.xaml.cs">
+      <DependentUpon>RedisShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\MongoDbShellView.xaml.cs">
+      <DependentUpon>MongoDbShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\SqlServerShellView.xaml.cs">
+      <DependentUpon>SqlServerShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\file\FileConnectionInfoView.xaml.cs">
+      <DependentUpon>FileConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\SqlServerConnectionInfoView.xaml.cs">
+      <DependentUpon>SqlServerConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\MongoDbConnectionInfoView.xaml.cs">
+      <DependentUpon>MongoDbConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.info\ConnectionInfoView.xaml.cs">
+      <DependentUpon>ConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="model\connection\file\FileConnectionInfo.cs" />
+    <Compile Include="view.model\connection.info\file\FileConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\MongoDbConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\MySqlConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\RedisConnectionInfoViewModel.cs" />
+    <Compile Include="view\DatastoreView.xaml.cs">
+      <DependentUpon>DatastoreView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="data\CharClassOption.cs" />
+    <Compile Include="DevtoolView.xaml.cs">
+      <DependentUpon>DevtoolView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Display.cs" />
+    <Compile Include="model\connection\my.sql\MySqlConnectionInfo.cs" />
+    <Compile Include="model\connection\neo4j\Neo4jConnectionInfo.cs" />
+    <Compile Include="model\XToolWorkspace.cs" />
+    <Compile Include="view.model\connection.info\ConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\connection.info\SqlServerConnectionInfoViewModel.cs" />
+    <Compile Include="view.model\XToolWorkspaceViewModel.cs" />
+    <Compile Include="view\OverlayView.xaml.cs" />
+    <Compile Include="view\Shell.xaml.cs" />
+    <Compile Include="view\sql.objects\XFGeneratorView.xaml.cs">
+      <DependentUpon>XFGeneratorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\state.management\AuthorizationView.xaml.cs" />
+    <Compile Include="view\state.management\ErrorView.xaml.cs" />
+    <Compile Include="view\state.management\LogoffView.xaml.cs" />
+    <Compile Include="view\state.management\UnauthorizedView.xaml.cs" />
+    <Compile Include="view\connection.info\file\XmlConnectionInfoView.xaml.cs">
+      <DependentUpon>XmlConnectionInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\connection.shell\XmlShellView.xaml.cs">
+      <DependentUpon>XmlShellView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ApiCallBuilderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\encryption\DataEncryptionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\StatsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\LogErrorDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ApiScratchpadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\LogApiRequestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\LogErrorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\LogSessionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\logging\SqlServerLogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\TimeEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\template.comands\TemplateCommandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\api\ApiCallView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\ConnectionStringsImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\api\ApiEndpointImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\api\ApiEndpointsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\api\ApiEndpointView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\ApiView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\ApiShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\ApiConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AsciiMapWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\MySqlConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\solution\SolutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view.model\TemplateOutputView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\RedisKnownTypes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\comparer\SqlComparerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\ExportDataReaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\DataColumnDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\DataTableDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\file\FileFormatSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\FileExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\ExcelExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\file\FileFinderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\JsonShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\ExcelShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\file\JsonConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\file\ExcelConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\RedisConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\mongo\MongoQueryExecutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\brush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\dark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\ExportTabResultsetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlTextEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\shared\TabDataProfilerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlCommandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlResultsetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlServerCommandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlStoredProcedureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\sql.objects\SqlTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\RedisExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\MongoDbExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\datastore.explorer\SqlExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\Neo4jShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\FileShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\MySqlShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\RedisShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\MongoDbShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\SqlServerShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\file\FileConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\SqlServerConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\MongoDbConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.info\ConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="theme\Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="theme\DataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\DatastoreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DevtoolView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="code\command\RelayCommand.cs" />
+    <Compile Include="code\command\RelayCommand`1.cs" />
+    <Compile Include="code\converter\BooleanToBrushConverter.cs" />
+    <Compile Include="code\converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="code\converter\ImageMapConverter.cs" />
+    <Compile Include="code\converter\StringFormatConverter.cs" />
+    <Compile Include="code\discovery\sql\SqlColumn.cs" />
+    <Compile Include="code\discovery\sql\SqlParameter.cs" />
+    <Compile Include="code\discovery\sql\SqlStoredProcedure.cs" />
+    <Compile Include="code\discovery\sql\SqlTable.cs" />
+    <Compile Include="code\fsm\ActivityStateOption.cs" />
+    <Compile Include="code\fsm\EndpointAction.cs" />
+    <Compile Include="code\fsm\EndpointOption.cs" />
+    <Compile Include="code\fsm\IEndpointAction.cs" />
+    <Compile Include="code\fsm\ITransitionCondition.cs" />
+    <Compile Include="code\fsm\State.cs" />
+    <Compile Include="code\fsm\StateMachine.cs" />
+    <Compile Include="code\fsm\StateManager.cs" />
+    <Compile Include="code\fsm\Transition.cs" />
+    <Compile Include="code\fsm\TransitionCondition.cs" />
+    <Compile Include="code\fsm\TransitionTypeOption.cs" />
+    <Compile Include="code\OverlayManager.cs" />
+    <Compile Include="code\template.selector\CommandTemplateSelector.cs" />
+    <Compile Include="code\template.selector\MappedTemplateSelector.cs" />
+    <Compile Include="code\view.model\common\GroupingViewModel.cs" />
+    <Compile Include="code\view.model\common\HierarchicalViewModelT.cs" />
+    <Compile Include="code\view.model\common\IHierarchicalViewModel.cs" />
+    <Compile Include="code\view.model\common\IViewModel.cs" />
+    <Compile Include="code\view.model\common\PropertyValidator.cs" />
+    <Compile Include="code\view.model\common\PropertyValidatorCollection.cs" />
+    <Compile Include="code\view.model\common\SortableObservableCollectionTU.cs" />
+    <Compile Include="code\view.model\common\SortableViewModelT.cs" />
+    <Compile Include="code\view.model\common\ViewModelT.cs" />
+    <Compile Include="code\view.model\sql\ColumnMapViewModel.cs" />
+    <Compile Include="code\view.model\sql\DataColumnViewModel.cs" />
+    <Compile Include="code\view.model\sql\DataSetViewModel.cs" />
+    <Compile Include="code\view.model\sql\DataTableViewModel.cs" />
+    <Compile Include="code\view.model\sql\ParameterViewModel.cs" />
+    <Compile Include="code\view.model\sql\SqlColumnViewModel.cs" />
+    <Compile Include="code\view.model\sql\SqlCommandViewModel.cs" />
+    <Compile Include="code\view.model\sql\SqlParameterViewModel.cs" />
+    <Compile Include="code\view.model\sql\SqlStoredProcedureViewModel.cs" />
+    <Compile Include="code\view.model\sql\SqlTableViewModel.cs" />
+    <Compile Include="code\view.model\sql\StoredProcedureGroupingViewModel.cs" />
+    <Compile Include="code\view.model\sql\StoredProcedureSchemaGroupingViewModel.cs" />
+    <Compile Include="code\view.model\sql\TableGroupingViewModel.cs" />
+    <Compile Include="code\view.model\sql\TableSchemaGroupingViewModel.cs" />
+    <Compile Include="code\view.model\sql\ViewGroupingViewModel.cs" />
+    <Compile Include="code\view.model\sql\ViewSchemaGroupingViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="view\OverlayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\sql.objects\XFGeneratorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\state.management\AuthorizationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\state.management\ErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\state.management\LogoffView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\state.management\UnauthorizedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="view\connection.info\file\XmlConnectionInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\connection.shell\XmlShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="model\ColumnMap.cs" />
+    <Compile Include="model\connection\base\ConnectionInfo.cs" />
+    <Compile Include="model\connection\base\ConnectionInfoTypeOption.cs" />
+    <Compile Include="code\ModelActionOption.cs" />
+    <Compile Include="model\connection\mongodb\MongoDbConnectionInfo.cs" />
+    <Compile Include="model\connection\sql.server\Parameter.cs" />
+    <Compile Include="model\connection\redis\RedisConnectionInfo.cs" />
+    <Compile Include="model\connection\sql.server\SqlCommand.cs" />
+    <Compile Include="model\connection\sql.server\SqlServerConnectionInfo.cs" />
+    <Compile Include="code\ZoneTypeOption.cs" />
+    <Compile Include="model\DataToolExtensionMethods.cs" />
+    <Compile Include="model\DelimiterOption.cs" />
+    <Compile Include="model\ExcelHelper.cs" />
+    <Compile Include="model\Map.cs" />
+    <Compile Include="model\PadOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="data\DataMappings.csv" />
+    <None Include="data\DataMaps.csv" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="data\flex.core\ApiRequestextensions.cs.txt" />
+    <Resource Include="data\flex.core\ApiRequest`1.cs.txt" />
+    <Resource Include="data\flex.core\ApiResponse`1.cs.txt" />
+    <Resource Include="data\flex.core\Parameter.cs.txt" />
+    <Resource Include="data\flex.core\Parameters.cs.txt" />
+    <Resource Include="images\info.sqlserver.png" />
+    <Resource Include="images\info.mysql.png" />
+    <Resource Include="images\info.redis.png" />
+    <Resource Include="images\info.mysql.orig.png" />
+    <Resource Include="images\info.mongodb.png" />
+    <Resource Include="images\circle.black.png" />
+    <Resource Include="images\circle.blue.png" />
+    <Resource Include="images\circle.brown.png" />
+    <Resource Include="images\circle.cyan.png" />
+    <Resource Include="images\circle.gray.png" />
+    <Resource Include="images\circle.green.png" />
+    <Resource Include="images\circle.orange.png" />
+    <Resource Include="images\circle.red.png" />
+    <Resource Include="images\command.add.png" />
+    <Resource Include="images\content.help.PNG" />
+    <Resource Include="images\content.image.png" />
+    <Resource Include="images\content.list.png" />
+    <Resource Include="images\content.msexcel.png" />
+    <Resource Include="images\content.msword.png" />
+    <Resource Include="images\content.pdf.png" />
+    <Resource Include="images\content.powerpoint.png" />
+    <Resource Include="data\notes.HttpClient.txt" />
+    <Resource Include="data\settings.txt" />
+    <Resource Include="data\registration.txt" />
+    <Resource Include="Resources\xF.48.ico" />
+    <Resource Include="images\run.black.png" />
+    <Resource Include="images\execute.png" />
+    <Resource Include="images\add.to.folder.png" />
+    <Resource Include="images\copy.clipboard.png" />
+    <Resource Include="images\clear.folder.png" />
+    <Resource Include="images\open.folder.png" />
+    <Resource Include="images\export.html.png" />
+    <Resource Include="images\compare.blue.png" />
+    <Resource Include="images\refresh.blue.png" />
+    <Resource Include="images\filter.png" />
+    <Resource Include="images\mongo.collection.2.png" />
+    <Resource Include="images\json.png" />
+    <Resource Include="images\mongo.database.png" />
+    <Resource Include="images\mongo.collection.png" />
+    <None Include="Resources\AsciiMap.xml" />
+    <Resource Include="images\view.detail.png" />
+    <Resource Include="images\properties.png" />
+    <Resource Include="images\model_entity.png" />
+    <Resource Include="images\help.warning.png" />
+    <Resource Include="images\help.information.png" />
+    <Resource Include="images\help.error.png" />
+    <Resource Include="images\folder_blue_2.png" />
+    <Resource Include="images\Db.Column.PNG" />
+    <Resource Include="images\Db.Column.Key.PNG" />
+    <Resource Include="images\database_table_field.png" />
+    <Resource Include="images\database_table.png" />
+    <Resource Include="images\database_storedprocedure.png" />
+    <Resource Include="images\context.png" />
+    <Resource Include="images\content.xml.png" />
+    <Resource Include="images\content.snippet.png" />
+    <Resource Include="data\AsciiMap.txt" />
+    <Resource Include="data\AsciiMap.xml" />
+    <Content Include="data\BuildDataDictionary.sql" />
+    <Resource Include="data\Copy of Template.Profiler.01.txt" />
+    <Resource Include="data\CommandTemplates.xml" />
+    <Content Include="data\cyclops.facets.apirequest.sql" />
+    <Content Include="data\cyclops.facets.error.sql" />
+    <Content Include="data\cyclops.facets.session.sql" />
+    <Content Include="data\cyclops.get.error.xml.sql" />
+    <Content Include="data\cyclops.search.error.sql" />
+    <Content Include="data\cyclops.search.session.sql" />
+    <Content Include="data\DataMapsTable.sql" />
+    <Resource Include="data\DataTypes.txt" />
+    <Content Include="data\Discovery.StoredProcedures.sql" />
+    <Content Include="data\Discovery.Tables.MySql.sql" />
+    <Content Include="data\Discovery.Tables.sql" />
+    <Content Include="data\Discovery.Views.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="code\filter\" />
+    <Folder Include="code\view.model\excel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

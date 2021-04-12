@@ -1,0 +1,249 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+                    xmlns:local="clr-namespace:XTool" 
+                    xmlns:cyclops="clr-namespace:XTool.Cyclops"
+                    xmlns:m="clr-namespace:XTool.Mongo" 
+                    xmlns:lcl="clr-namespace:XTool.Inference">
+
+    <local:BooleanToVisibilityConverter x:Key="BoolToVisibility" FalseValue="Collapsed"/>
+    <local:BooleanToVisibilityConverter x:Key="BoolToVisibilityReverse" FalseValue="Collapsed" IsReverse="True"/>
+    <local:BooleanToVisibilityConverter x:Key="BoolToVisibilityHidden" FalseValue="Hidden"/>
+    <local:BooleanToVisibilityConverter x:Key="BoolToVisibilityReverseHidden" FalseValue="Collapsed" IsReverse="True"/>
+    <local:ImageMapConverter x:Key="ImageConverter"/>
+
+   
+    
+    <ObjectDataProvider x:Key="TemplateTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="local:TemplateTypeOption"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+       
+    <ObjectDataProvider x:Key="HeaderTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="local:HeaderTypeOption"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+    
+    <ObjectDataProvider x:Key="ConnectionInfoTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="local:ConnectionInfoTypeOption"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="ZoneTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="lcl:ZoneTypeOption"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="LogSchemaTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="cyclops:LogSchema"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <ObjectDataProvider x:Key="ProtocolTypes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider.MethodParameters>
+            <x:Type TypeName="local:ProtocolOption"/>
+        </ObjectDataProvider.MethodParameters>
+    </ObjectDataProvider>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:GroupingViewModel}" ItemsSource="{Binding Path=Items}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="20" Width="20" Source="../images/folder_blue_2.png"/>
+            <TextBlock Text="{Binding Path=Title}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:TableSchemaGroupingViewModel}" ItemsSource="{Binding Path=Items}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="20" Width="20" Source="../images/folder_blue_2.png"/>   
+            <CheckBox Visibility="{Binding ElementName=tglCompare, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Margin="0,7,3,0"
+                      IsChecked="{Binding Path=IsChecked}"/>            
+            <TextBlock Text="{Binding Path=Title}" VerticalAlignment="Center" /> 
+
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:StoredProcedureSchemaGroupingViewModel}" ItemsSource="{Binding Path=Items}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="20" Width="20" Source="../images/folder_blue_2.png"/>
+            <CheckBox Visibility="{Binding ElementName=tglCompare, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Margin="0,7,3,0"
+                      IsChecked="{Binding Path=IsChecked}"/>
+            <TextBlock Text="{Binding Path=Title}" VerticalAlignment="Center" />
+
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:StoredProcedureGroupingViewModel}" ItemsSource="{Binding Path=Items}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="20" Width="20" Source="../images/folder_blue_2.png"/>
+            <TextBlock Text="{Binding Path=Title}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:FieldFilterViewModel}" ItemsSource="{Binding Path=Values}">
+        <StackPanel Orientation="Horizontal">
+            <Image  Height="20" Width="20" Source="../images/filter.png"/>
+            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center" Margin="2,0,15,0"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+    
+    <DataTemplate DataType="{x:Type local:FilterValueViewModel}">
+        <StackPanel Orientation="Horizontal">
+            <CheckBox IsChecked="{Binding Path=IsSelected}" Content="{Binding Path=Key}"/>
+            <TextBlock Text="{Binding Path=Count}" Margin="5,0,0,0"/>
+        </StackPanel>
+        
+    </DataTemplate>
+    
+    <DataTemplate x:Key="SqlTableDataTemplate">
+        <local:SqlTableView/>
+    </DataTemplate>
+    <DataTemplate x:Key="SqlStoredProcedureDataTemplate">
+        <local:SqlStoredProcedureView/>
+    </DataTemplate>
+    <DataTemplate x:Key="SqlViewDataTemplate">
+        <local:SqlTableView/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="LogApiRequestDataTemplate">
+        <local:LogApiRequestView/>
+    </DataTemplate>
+    <DataTemplate x:Key="LogErrorDataTemplate">
+        <local:LogErrorView/>
+    </DataTemplate>
+    <DataTemplate x:Key="LogSessionDataTemplate">
+        <local:LogSessionView/>
+    </DataTemplate>
+    
+
+    <ContextMenu x:Key="SprocCtxMenu" >
+        <MenuItem Header="Add Command" Tag="{Binding}" />
+    </ContextMenu>
+    
+    <HierarchicalDataTemplate DataType="{x:Type local:DatabaseViewModel}" ItemsSource="{Binding Path=Collections}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/mongo.database.png"/>
+            <TextBlock Text="{Binding Path=ToDisplay}" VerticalAlignment="Center"/>
+        </StackPanel>        
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:CollectionViewModel}" ItemsSource="{Binding Path=Indexes}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/json.png" ToolTip="{Binding Path=Json}" />
+            <TextBlock Text="{Binding Path=ToDisplay}" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=DocumentCount}" Opacity="0.5" FontSize="10" Margin="3,0,0,0" VerticalAlignment="Center"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <DataTemplate DataType="{x:Type local:IndexViewModel}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/database_table_field.png"/>
+            <TextBlock Text="{Binding Path=ToDisplay}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </DataTemplate>
+
+
+    <HierarchicalDataTemplate DataType="{x:Type local:SqlTableViewModel}" ItemsSource="{Binding Path=Columns}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="16" Width="16" Source="../images/database_table.png"/>
+            <Button Content="" FontFamily="Wingdings 3" Style="{DynamicResource CommandButton}" Margin="0,0,2,0"
+                    Visibility="{Binding ElementName=tglCompare, Path=IsChecked, Converter={StaticResource BoolToVisibilityReverse}}"                   
+                    Command="{Binding  Path=AddTextCommand}"/>
+            <CheckBox Visibility="{Binding ElementName=tglCompare, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Margin="0,3,1,0"
+                      IsChecked="{Binding Path=IsChecked}"/>
+            <TextBlock Text="{Binding Path=ToDisplay}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+    
+    <HierarchicalDataTemplate DataType="{x:Type local:SqlColumnViewModel}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/database_table_field.png"/>
+            <TextBlock Text="{Binding Path=ToDisplay}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate DataType="{x:Type local:SqlStoredProcedureViewModel}" ItemsSource="{Binding Path=Parameters}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/database_storedprocedure.png"/>
+            <Button Content="" FontFamily="Wingdings 3" Style="{DynamicResource CommandButton}"
+                    Command="{Binding Path=AddSprocCommand}" CommandParameter="{Binding}"/>
+            <CheckBox Visibility="{Binding ElementName=tglCompare, Path=IsChecked, Converter={StaticResource BoolToVisibility}}" Margin="0,7,3,0"
+                      IsChecked="{Binding Path=IsChecked}"/>
+            <TextBlock Text="{Binding Path=ToDisplay}" 
+                       VerticalAlignment="Center" ToolTip="{Binding Path=ToTooltip}" 
+                       ContextMenu="{StaticResource ResourceKey=SprocCtxMenu}"/>
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <DataTemplate DataType="{x:Type local:SqlParameterViewModel}">
+        <StackPanel Orientation="Horizontal">
+            <Image Margin="0,2,4,2" Height="12" Width="12" Source="../images/database_table_field.png"/>
+            <TextBlock Text="{Binding Path=ParamName}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </DataTemplate>
+
+
+
+    <DataTemplate x:Key="SqlServerShell">
+        <local:SqlServerShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="MongoDbShell">
+        <local:MongoDbShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="RedisShell">
+        <local:RedisShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="MySqlShell">
+        <local:MySqlShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="MariaDbShell">
+        <Grid Background="Orange"/>
+    </DataTemplate>
+    <DataTemplate x:Key="NoneShell">
+        <local:ConnectionInfoView/>
+    </DataTemplate>
+    <DataTemplate x:Key="FileShell">
+        <local:FileShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="Neo4jShell">
+        <local:Neo4jShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="ExcelShell">
+        <local:ExcelShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="XmlShell">
+        <local:XmlShellView/>
+    </DataTemplate>
+    <DataTemplate x:Key="JsonShell">
+        <local:JsonShellView/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ApiShell">
+        <local:ApiShellView/>
+    </DataTemplate>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    <DataTemplate x:Key="DatabaseDataTemplate">
+        <Grid Background="Orange"/>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="CollectionDataTemplate">
+        <local:MongoQueryExecutionView/>
+    </DataTemplate>
+    
+
+
+</ResourceDictionary>

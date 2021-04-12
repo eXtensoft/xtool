@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="XTool.MySqlShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XTool"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid>
+        <TabControl x:Name="tabContent" Style="{DynamicResource ResourceKey=viewTabTop}">
+            <TabItem Header="MySql" Style="{DynamicResource ResourceKey=viewTabItem}">
+                <TabControl Style="{DynamicResource ResourceKey=viewTabTop}">
+                    <TabItem Header="Connection Info" Style="{DynamicResource ResourceKey=viewTabItem}">
+                        <local:MySqlConnectionInfoView/>
+                    </TabItem>
+                    <TabItem Style="{DynamicResource ResourceKey=viewTabItem}">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Commands"/>
+                                <Button Width="15" Margin="15,0,0,0" Command="{Binding Path=EditSqlTextCommand}">
+                                    <Image Source="../../images/content.snippet.png"/>
+                                </Button>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TabItem.Content>
+                            <local:SqlServerCommandsView/>
+                        </TabItem.Content>                       
+                    </TabItem>
+                    
+                </TabControl>
+            </TabItem>
+
+            <TabItem Header="Discovery" Style="{DynamicResource ResourceKey=viewTabItem}">
+                <local:SqlExplorerView/>
+            </TabItem>
+            <TabItem Header="ResultSet" Style="{DynamicResource ResourceKey=viewTabItem}"  IsEnabled="{Binding Path=IsCommandSelected}">
+                <local:SqlResultsetView/>
+            </TabItem>
+            <TabItem Header="DataProfiler" Style="{DynamicResource ResourceKey=viewTabItem}"  IsEnabled="{Binding Path=IsCommandSelected}">
+                <local:TabDataProfilerView/>
+            </TabItem>
+            <TabItem Header="Comparison" Style="{DynamicResource ResourceKey=viewTabItem}">
+                <local:SqlComparerView/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

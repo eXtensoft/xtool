@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="XTool.ApiConnectionInfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XTool"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <UserControl.Resources>
+        <local:BooleanToBrushConverter x:Key="BoolToBrush"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Text="Name"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Text="Server"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Text="Text"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Text="Zone"/>
+        <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Text="Provider Name"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" HorizontalAlignment="Right" Text="Datastore"/>
+        <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Name}"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Server}"/>
+        <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Text}"/>
+        <ComboBox Grid.Column="2" Grid.Row="6" Name="cboSelectedUrl" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=SelectedUrl, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Path=Urls}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  FontFamily="Wingdings" Text="ý"  Foreground="{Binding Path=IsAvailable, Converter={StaticResource ResourceKey=BoolToBrush}}" />
+                        <TextBlock Text="{Binding Path=Zone}"/>
+                    </StackPanel>
+                    
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding Path=ProviderName}"/>
+        <TextBlock Grid.Column="2" Grid.Row="10" Text="{Binding Path=ConnectionType}"/>
+
+        <GroupBox Grid.Column="0" Grid.Row="12">
+            <GroupBox.Header>
+                <TextBlock Text="Select Datastore"/>
+            </GroupBox.Header>
+            <GroupBox.Content>
+                <StackPanel Margin="20,10,0,0">
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsNone}" Content="None"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsApi}" Content="Api"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsSqlServer}" Content="SqlServer"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsMongoDb}" Content="MongoDb"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsRedis}" Content="Redis"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsMySql}" Content="MySql"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsNeo4j}" Content="Neo4j"/>
+                    <RadioButton GroupName="datastore" IsChecked="{Binding Path=IsFile}" Content="File"/>
+                </StackPanel>
+            </GroupBox.Content>
+        </GroupBox>
+
+        <Grid Grid.Column="2" Grid.Row="12" DataContext="{Binding ElementName=cboSelectedUrl, Path=SelectedItem}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Text="Protocol"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Text="Url"/>
+            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Text="Count"/>
+            <ComboBox Grid.Column="2" Grid.Row="0" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=Protocol, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Source={StaticResource ResourceKey=ProtocolTypes}}"/>
+            
+            <CheckBox Grid.Column="2" Grid.Row="2" Content="Is Available" IsChecked="{Binding Path=IsAvailable}" IsEnabled="False"/>
+            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Url}"/>
+            <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=Count}"/>
+        </Grid>
+
+        <Grid Grid.Column="2" Grid.Row="14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalAlignment="Left"  Content="Test Connection"  Command="{Binding Path=TestConnectionCommand}" Margin="20,0,0,0"/>
+            <Button Grid.Column="1" HorizontalAlignment="Right"  Content="Execute Discovery"  Command="{Binding Path=ExecuteDiscoveryCommand}"  Margin="0,0,20,0"/>
+
+        </Grid>
+
+        <GroupBox Grid.Column="4" Grid.RowSpan="16" Header="Headers">
+            <DockPanel LastChildFill="True">
+                <Grid DockPanel.Dock="Top" DataContext="{Binding ElementName=lsbHeaders, Path=SelectedItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Text="Scope"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Text="Type"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Text="Name"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Text="Value"/>
+
+                    <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Scope}"/>
+                    <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Type}"/>
+                    <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Name}"/>
+                    <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=Value}"/>
+                </Grid>
+                <Button Grid.Column="0" Grid.Row="8" Content="Add" Command="{Binding Path=AddHeaderCommand}"/>
+                <ListBox Name="lsbHeaders" ItemsSource="{Binding Path=Headers}" SelectedItem="{Binding Path=SelectedHeader}" Margin="20,10">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+
+        </GroupBox>
+
+        
+        
+    </Grid>
+</UserControl>

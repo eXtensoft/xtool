@@ -1,0 +1,781 @@
+﻿<UserControl x:Class="XTool.LogApiRequestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XTool"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="cvs"/>
+        <CollectionViewSource x:Key="cvsGroup"/>
+        <local:IntToVisibilityConverter x:Key="VisConverter"/>
+
+        <ObjectDataProvider x:Key="CountLimits" ObjectType="{x:Type local:ListProvider}" MethodName="GetCountLimits" />
+
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="Label.Foreground" Value="Black"/>
+        </Style>
+
+        <DataTemplate DataType="{x:Type local:FacetViewModel}">
+
+            <CheckBox IsChecked="{Binding Path=IsSelected}">
+                <CheckBox.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Value}" Foreground="#1D568B"/>
+                        <TextBlock Foreground="Gray" FontStyle="Italic">
+                            <TextBlock.Text>
+                                <Binding StringFormat=" ({0})" Path="Count"/>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </StackPanel>
+                </CheckBox.Content>
+            </CheckBox>
+
+
+        </DataTemplate>
+
+        <Style TargetType="{x:Type GridSplitter}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="ShowsPreview" Value="True"/>
+            <Setter Property="Width" Value="6"/>
+            <Setter Property="Margin" Value="0,75"/>
+        </Style>
+        <Style x:Key="LinkButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock><ContentPresenter/></TextBlock>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Blue" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="ForestGreen" />
+                    <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="#E0E0E0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Silver" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Silver"/>
+            </Style.Resources>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#B8B8B8"/>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#E0E0E0"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#EBEBEB"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                    <Setter Property="Background" Value="#B2B4BF"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="3">
+                    <Setter Property="Background" Value="#E6E6E6"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="4">
+                    <Setter Property="Background" Value="#B2B4BF"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="5">
+                    <Setter Property="Background" Value="#B2B4BF"></Setter>
+                </Trigger>
+                <!--<Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource ResourceKey=SystemColors.HighlightBrushKey}"/>
+            </Trigger>-->
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type TabControl}" x:Key="tabLog">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="10"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TabControlNormalBorderBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource StandardLight}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+
+                        <Grid ClipToBounds="True" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="3"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Border Height="40" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5" 
+                                    Width="Auto" Grid.Row="0" CornerRadius="20" Background="#E0E0E0">
+                                <TabPanel x:Name="HeaderPanel" HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Center" IsItemsHost="true" Grid.Row="1" KeyboardNavigation.TabIndex="1"/>
+                            </Border>
+
+                            <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Border x:Name="BorderOut" VerticalAlignment="Stretch">
+                                    <Border x:Name="BorderIn" VerticalAlignment="Stretch" Background="#00000000" >
+                                        <Grid>
+                                            <Border Background="{DynamicResource StandardLight}" Opacity="0.8" VerticalAlignment="Stretch"/>
+                                            <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                        </Grid>
+                                    </Border>
+                                </Border>
+                            </Grid>
+                        </Grid>
+
+                    </ControlTemplate>
+
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TabItem}" x:Key="tabitemLog" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border Name="Border" Margin="20,2,0,2" CornerRadius="15" Background="#E0E0E0" BorderBrush="Transparent" BorderThickness="1" >
+                            <Grid x:Name="grid" MinWidth="55" MinHeight="25">
+
+                                <ContentPresenter x:Name="ContentSite"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      ContentSource="Header"
+                                      RecognizesAccessKey="True"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                <Setter Property="Foreground" Value="#EEEEEE" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="Brown" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Yellow" />
+                                <Setter Property="Foreground" Value="Green" />
+                            </Trigger>
+                            <!--<Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                        </Trigger>-->
+                            <!--<Trigger Property="IsSelected" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                        </Trigger>-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="Gray" />
+                                <Setter Property="Foreground" Value="#EEEEEE" />
+                                <!--<Setter TargetName="Border" Property="BorderBrush" Value="#B8B8B8"/>
+                            <Setter TargetName="Border" Property="Background" Value="#EBEBEB""#1D568B"/>-->
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="260"></ColumnDefinition>
+                <ColumnDefinition Width="1"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="15"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Facet/Metrix Search -->
+            <DockPanel Grid.Column="0" Grid.Row="1" LastChildFill="True" Margin="10">
+                <TabControl  BorderThickness="0" SelectedIndex="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=SearchIndex}"
+                             DockPanel.Dock="Top" 
+                             Style="{StaticResource ResourceKey=tabLog}">
+
+
+
+                    <TabItem Header="Facets" Style="{StaticResource ResourceKey=tabitemLog}" IsSelected="True">
+                        <DockPanel LastChildFill="True">
+                            <Border DockPanel.Dock="Top"
+                        CornerRadius="20" 
+                        Margin="5" 
+                        Padding="10" 
+                        BorderBrush="LightGray" 
+                        BorderThickness="1" 
+                        Background="#E0E0E0">
+                                <Expander IsExpanded="True" Style="{x:Null}">
+                                    <Expander.Header>
+                                        <TextBlock Text="Select Timeframe"/>
+                                    </Expander.Header>
+                                    <Expander.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="5"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="5"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="From:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Gray"/>
+                                            <TextBlock Text="To:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Gray"/>
+                                            <DatePicker Grid.Column="2" Grid.Row="0" SelectedDate="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=From}"/>
+                                            <DatePicker Grid.Column="2" Grid.Row="2" SelectedDate="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=To}" />
+                                        </Grid>
+                                    </Expander.Content>
+                                </Expander>
+                            </Border>
+                            <Border DockPanel.Dock="Top"
+                        CornerRadius="20" 
+                        Margin="5" 
+                        Padding="10" 
+                        BorderBrush="LightGray" 
+                        BorderThickness="1" 
+                        Background="#E0E0E0">
+                                <Expander Style="{x:Null}" IsExpanded="True">
+                                    <Expander.Header>
+                                        <TextBlock Text="Select Max Distinct"/>
+                                    </Expander.Header>
+                                    <Expander.Content>
+                                        <ComboBox x:Name="cboTopNSelect"  IsEnabled="{Binding ElementName=rdoTopN, Path=IsChecked}"
+                                                  ItemsSource="{Binding Source={StaticResource ResourceKey=CountLimits}}" 
+                                                  SelectedIndex="2"
+                                                  SelectedItem="{Binding Path=TopNCount}"
+                                                  Grid.Column="1" MinWidth="75">
+                                            <ComboBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Text}" FontSize="9"/>
+                                                </DataTemplate>
+                                            </ComboBox.ItemTemplate>
+                                        </ComboBox>
+                                    </Expander.Content>
+                                </Expander>
+                            </Border>
+                            <Border />
+                        </DockPanel>
+                    </TabItem>
+                    
+                    <TabItem Header="Metrix" IsSelected="False"  
+                             Style="{StaticResource ResourceKey=tabitemLog}" IsEnabled="False" >
+                        <DockPanel LastChildFill="True">
+                            <Border DockPanel.Dock="Top"
+                                CornerRadius="20" 
+                                Margin="5" 
+                                Padding="10" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1" 
+                                Background="#E0E0E0">
+                                <Expander Style="{x:Null}" IsExpanded="True">
+                                    <Expander.Header>
+                                        <TextBlock Text="Select Timeframe"/>
+                                    </Expander.Header>
+                                    <Expander.Content>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="5"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="5"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Text="From:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Gray"/>
+                                            <TextBlock Text="To:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="Gray"/>
+                                            <DatePicker Grid.Column="2" Grid.Row="0" SelectedDate="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=From}"/>
+                                            <DatePicker Grid.Column="2" Grid.Row="2" SelectedDate="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=To}" />
+                                        </Grid>
+                                    </Expander.Content>
+                                </Expander>
+                            </Border>
+                            <Border DockPanel.Dock="Top"
+                                CornerRadius="20" 
+                                Margin="0" 
+                                Padding="10,0" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1" 
+                                Background="#E0E0E0">
+                                <GroupBox Header="Select">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <RadioButton Name="rdoFacets" 
+                                                     Content="Facets" 
+                                                     GroupName="selectBy" IsChecked="{Binding Path=IsFacetsChecked}"
+                                                     Margin="0,5,0,0"/>
+                                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+
+                                            <RadioButton Name="rdoTopN" Content="Top" GroupName="selectBy" IsChecked="True" Margin="0,5,5,0"/>
+                                            <ComboBox x:Name="cboMaxSelect"  IsEnabled="{Binding ElementName=rdoTopN, Path=IsChecked}"
+                                                  ItemsSource="{Binding Source={StaticResource ResourceKey=CountLimits}}" 
+                                                  SelectedIndex="2"
+                                                  SelectedItem="{Binding Path=TopNCount}"
+                                                  Grid.Column="1" MinWidth="75">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Path=Text}" FontSize="9"/>
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+
+                                        </StackPanel>
+
+                                    </Grid>
+
+
+                                </GroupBox>
+
+                            </Border>
+<!-- 
+                            <Border DockPanel.Dock="Top"
+                                CornerRadius="20" 
+                                Margin="5" 
+                                Padding="10" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1" 
+                                Background="#E0E0E0">
+                                <Grid IsEnabled="{Binding ElementName=rdoFacets, Path=IsChecked}">
+                                    <StackPanel >
+                                        <Expander Style="{x:Null}" x:Name="expCategory">
+                                            <Expander.Header>
+                                                <TextBlock Text="Category"/>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <Grid MinHeight="50">
+                                                    <ItemsControl Margin="25,0,5,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=Categories}"/>
+                                                </Grid>
+                                            </Expander.Content>
+                                        </Expander>
+
+                                        <Expander Style="{x:Null}" x:Name="expAppContextInstance">
+                                            <Expander.Header>
+                                                <TextBlock Text="App Instance"/>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <Grid MinHeight="50">
+                                                    <ItemsControl Margin="25,0,5,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=AppContextInstances}"/>
+                                                </Grid>
+                                            </Expander.Content>
+                                        </Expander>
+
+
+                                        <Expander Style="{x:Null}" x:Name="expZone">
+                                            <Expander.Header>
+                                                <TextBlock Text="Zone"/>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <Grid MinHeight="50">
+                                                    <ItemsControl Margin="25,0,5,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=Zones}"/>
+                                                </Grid>
+                                            </Expander.Content>
+                                        </Expander>
+                                        <Expander Style="{x:Null}" x:Name="expApplicationKey">
+                                            <Expander.Header>
+                                                <TextBlock Text="Application Key"/>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <Grid MinHeight="50">
+                                                    <ItemsControl Margin="25,0,5,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=ApplicationKeys}"/>
+                                                </Grid>
+                                            </Expander.Content>
+                                        </Expander>
+                                        <Expander Style="{x:Null}" x:Name="expSeverity">
+                                            <Expander.Header>
+                                                <TextBlock Text="Severity"/>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <Grid MinHeight="50">
+                                                    <ItemsControl Margin="25,0,5,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=Severitys}"/>
+                                                </Grid>
+                                            </Expander.Content>
+                                        </Expander>
+                                        <Border Height="20" Background="Gray" CornerRadius="10" BorderBrush="Black">
+                                            <Grid Margin="10,2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                    <ColumnDefinition Width="1*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Content="And" Grid.Column="1"/>
+                                                <CheckBox Content="Or" Grid.Column="2"/>
+                                            </Grid>
+
+                                        </Border>
+
+
+                                    </StackPanel>
+                                    <Button Content="Refresh" Margin="0,0,10,0" 
+                                                Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=RefreshFacetsCommand}"
+                                                HorizontalAlignment="Right" 
+                                                Style="{StaticResource ResourceKey=LinkButton}"/>
+                                </Grid>
+
+                            </Border>
+                            <Border/>
+ -->
+                        </DockPanel>
+                    </TabItem>
+                </TabControl>
+                <Border/>
+            </DockPanel>
+            <Canvas Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
+                <Button Canvas.Right="30" Canvas.Top="43"
+                    Content="Search" Style="{StaticResource ResourceKey=LinkButton}"                
+                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=SearchCommand}"/>
+            </Canvas>
+            <!-- END Facet/Metrix Search -->
+
+            <!--<Grid Grid.Column="2" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Expander Grid.Row="0" Style="{x:Null}" Margin="20,10" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock Text="Filters"/>
+                    </Expander.Header>
+                    <Expander.Content>
+                        <Grid MinHeight="40">
+                            <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Bottom">
+                                <GroupBox Header="Day">
+                                    <ItemsControl x:Name="lsbDay" 
+                                         ItemsSource="{Binding}" 
+                                         BorderThickness="0"
+                                         Tag="Day"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+
+                                <GroupBox Header="Severity">
+                                    <ItemsControl x:Name="lsbSeverity" 
+                                         BorderThickness="0"
+                                         ItemsSource="{Binding}" 
+                                         Tag="Severity"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+                                <GroupBox Header="Category">
+                                    <ItemsControl x:Name="lsbCategory" 
+                                         BorderThickness="0"
+                                         ItemsSource="{Binding}" 
+                                         Tag="Category"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+
+                                <GroupBox Header="Zone">
+                                    <ItemsControl x:Name="lsbZone" 
+                                         BorderThickness="0"
+                                         ItemsSource="{Binding}"
+                                         Tag="Zone"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+                                <GroupBox Header="App Instance">
+                                    <ItemsControl x:Name="lsbAppContextInstance" ItemsSource="{Binding}"
+                                         Tag="AppContextInstance" BorderThickness="0"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+                                <GroupBox Header="App Key">
+                                    <ItemsControl x:Name="lsbApplicationKey" ItemsSource="{Binding}"
+                                         Tag="ApplicationKey" BorderThickness="0"
+                                         CheckBox.Checked="FilterItem_Selected"
+                                         CheckBox.Unchecked="FilterItem_Unselected">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox Margin="5,1" Content="{Binding Path=Text}" 
+                                                            Tag="{Binding Path=Tag}"  IsChecked="{Binding Path=IsFilter, Mode=TwoWay}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </GroupBox>
+                            </StackPanel>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+                <DataGrid Grid.Row="1" x:Name="grdItems" Margin="20,0"
+                              CanUserAddRows="False" ItemsSource="{Binding Source={StaticResource cvs}}"
+                              CanUserDeleteRows="False"
+                              IsReadOnly="True"
+                              AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="grdItems_Click" 
+                                                Style="{StaticResource ResourceKey=LinkButton}" Tag="{Binding}">
+                                        <Button.Content>
+                                            <Image Height="16" Width="16" Source="../images/view.detail.png"/>
+                                        </Button.Content>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Month">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Month}" Foreground="Gray"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Day">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Day}" Foreground="Gray"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="CreatedAt" Binding="{Binding Path=CreatedAt}" />
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" />
+                        <DataGridTextColumn Header="Severity" Binding="{Binding Path=Severity}" />
+                        <DataGridTextColumn Header="Category" Binding="{Binding Path=Category}" />
+                        <DataGridTextColumn Header="Zone" Binding="{Binding Path=Zone}" />
+                        <DataGridTextColumn Header="AppContext" Binding="{Binding Path=AppContextInstance}" />
+                        <DataGridTextColumn Header="App Key" Binding="{Binding Path=ApplicationKey}" />
+                        <DataGridTextColumn Header="Message" Width="*" Binding="{Binding Path=Message}" ToolTipService.ToolTip="{Binding Path=FormattedMessage}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>-->
+
+
+            <Grid x:Name="grdMetrixOverlay" Grid.Column="2" Grid.Row="1" Visibility="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=SearchIndex, Converter={StaticResource ResourceKey=VisConverter}}">
+                <Canvas Background="White"/>
+                <TabControl Style="{StaticResource ResourceKey=tabLog}">
+                    <TabItem Header="List" ButtonBase.Click="grdItems_Click"
+                             Style="{StaticResource ResourceKey=tabitemLog}">
+                        <DataGrid Grid.Row="1" x:Name="grdItems" Margin="20,0"
+                              CanUserAddRows="False" ItemsSource="{Binding Source={StaticResource cvs}}"
+                              CanUserDeleteRows="False"
+                              IsReadOnly="True"
+                              AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="grdItems_Click" 
+                                                Style="{StaticResource ResourceKey=LinkButton}" Tag="{Binding}">
+                                                <Button.Content>
+                                                    <Image Height="16" Width="16" Source="../images/view.detail.png"/>
+                                                </Button.Content>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <!--<DataGridTemplateColumn Header="Month">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Month}" Foreground="Gray"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="Day">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Day}" Foreground="Gray"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                                <DataGridTextColumn Header="ApiRequestId" Binding="{Binding Path=ApiRequestId}"/>
+                                <DataGridTextColumn Header="Start" Binding="{Binding Path=Start}"/> 
+                                <DataGridTextColumn Header="Elapsed" Binding="{Binding Path=Elapsed}"/>                               
+                                <DataGridTextColumn Header="ResponseCode" Binding="{Binding Path=ResponseCode}"/>
+
+                                <DataGridTextColumn Header="AppKey" Binding="{Binding Path=AppKey}"/>
+                                <DataGridTextColumn Header="AppInstance" Binding="{Binding Path=AppInstance}"/>
+                                <DataGridTextColumn Header="Path" Binding="{Binding Path=Path}"/>
+                                <DataGridTextColumn Header="ResponseText" Binding="{Binding Path=ResponseText}"/>
+                                <DataGridTextColumn Header="ControllerName" Binding="{Binding Path=ControllerName}" ToolTipService.ToolTip="{Binding Path=ControllerMethod}"/>                                
+                                
+
+                                <!--<DataGridTextColumn Header="Protocol" Binding="{Binding Path=Protocol}"/>-->
+                                <DataGridTextColumn Header="Host" Binding="{Binding Path=Host}"/>
+
+                                <DataGridTextColumn Header="ClientIP" Binding="{Binding Path=ClientIP}"/>
+                                <!--<DataGridTextColumn Header="BasicToken" Binding="{Binding Path=BasicToken}"/>-->
+                                <DataGridTextColumn Header="BearerToken" Binding="{Binding Path=BearerToken}"/>
+                                <DataGridTextColumn Header="MessageId" Binding="{Binding Path=MessageId}" ToolTipService.ToolTip="{Binding Path=MessageBody}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </TabItem>
+<!--
+                    <TabItem Header="Profile" Style="{StaticResource ResourceKey=tabitemLog}">
+
+                        <Grid x:Name="grdResults">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="5"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Border Margin="5" Padding="5" CornerRadius="10" Background="White">
+                                <ListBox Grid.Column="0" BorderThickness="0" 
+                                                 x:Name="lsbFields" MinWidth="150" AlternationCount="2"
+                                                 ItemsSource="{Binding Path=Fields}" 
+                                                 IsSynchronizedWithCurrentItem="True">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock HorizontalAlignment="Stretch" Text="{Binding Path=Name}" Foreground="{Binding TitleBrush}"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Border>
+
+                            <Grid Grid.Column="2" DataContext="{Binding ElementName=lsbFields, Path=SelectedItem, Mode=OneWay}" Margin="10,0,10,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="5"></ColumnDefinition>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                    <ColumnDefinition Width="20"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="5"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="5"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="5"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="5"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="5"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="5"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Foreground="DarkGray" Text="Name:"/>
+                                <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Foreground="DarkGray" Text="DataType:"/>
+                                <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Foreground="DarkGray" Text="Record Count:"/>
+                                <TextBlock Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right" Foreground="DarkGray" Text="Has Data:"/>
+                                <TextBlock Grid.Column="4" Grid.Row="2" HorizontalAlignment="Right" Foreground="DarkGray" Text="Has No Data:"/>
+                                <TextBlock Grid.Column="4" Grid.Row="4" HorizontalAlignment="Right" Foreground="DarkGray" Text="Max Length:"/>
+                                <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=Name, Mode=OneWay}" FontWeight="Bold" />
+                                <TextBlock Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=Datatype, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="6" Grid.Row="0" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=HasData, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="6" Grid.Row="2" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=HasNoData, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="6" Grid.Row="4" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=MaxLength, Mode=OneWay}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding ElementName=grdResults, Path=DataContext.RecordCount, Mode=OneWay}" FontWeight="Bold"/>
+                               
+                                <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Foreground="DarkGray" Text="Distinct Cnt:"/>
+                                <TextBlock Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=DistinctCount, Mode=OneTime}" FontWeight="Bold"/>
+                                <TextBlock Grid.Column="4" Grid.Row="6" HorizontalAlignment="Right" Foreground="DarkGray" Text="Distinct Pct:"/>
+                                <TextBlock Grid.Column="6" Grid.Row="6" HorizontalAlignment="Left" Foreground="#1D568B" Text="{Binding Path=DistinctPctHasData, StringFormat=\{0:00.00%\}, Mode=OneTime}"/>
+
+                                <DataGrid Grid.ColumnSpan="12" Grid.Row="8" AutoGenerateColumns="False"
+                                                  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding Path=Items, Mode=OneWay}" 
+                                                  DataContext="{Binding ElementName=lsbFields, Path=SelectedItem}">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Binding="{Binding Path=Count,StringFormat=\{0:#\,0\}, Mode=OneWay}" Header="Count"/>
+                                        <DataGridTextColumn Binding="{Binding Path=Percent, StringFormat=\{0:00.00%\}, Mode=OneTime}" Header="Percent"/>
+                                        <DataGridTextColumn Binding="{Binding Path=CumulativePercent, StringFormat=\{0:00.00%\}, Mode=OneTime}" Header="Cumulative Pct"/>
+                                        <DataGridTextColumn Binding="{Binding Path=Key, Mode=OneWay}" Header="Distinct Data" Width="*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Grid>
+
+                    </TabItem>
+-->
+
+                </TabControl>
+            </Grid>
+
+
+
+        </Grid>
+
+        <Grid x:Name="grdOverlay" Visibility="Collapsed">
+            <Canvas Background="White" Opacity="0.5"/>
+            <Border Margin="40" CornerRadius="20" BorderBrush="LightGray" BorderThickness="3"  Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnCloseOverlay" Click="btnCloseOverlay_Click" 
+                            HorizontalAlignment="Center" Style="{StaticResource ResourceKey=LinkButton}" 
+                            VerticalAlignment="Center" 
+                            Grid.Column="2" Grid.Row="0" 
+                            FontSize="24" Foreground="DarkGray"
+                            FontFamily="Wingdings" Content="ý" />
+                    <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" x:Name="grdContent">
+
+                    </Grid>
+                </Grid>
+
+            </Border>
+        </Grid>
+
+    </Grid>
+</UserControl>

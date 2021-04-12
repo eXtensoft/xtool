@@ -1,0 +1,205 @@
+﻿<UserControl x:Class="XTool.SqlServerLogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XTool"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:MappedTemplateSelector x:Key="MappedSelector"/>
+        <local:BooleanToBrushConverter x:Key="BoolToBrush" FalseBrush="Black" TrueBrush="Green" DefaultBrush="DarkGray"/>
+        <local:BooleanToFontWeightConverter x:Key="BoolToFontWeight" IsTrueWeight="Normal" IsFalseWeight="Light"/>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}},Path=Logging}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" Grid.RowSpan="2" Name="lsbItems" ItemsSource="{Binding Path=Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="35" Height="35" Margin="5,5,5,0">
+                        <TextBlock Text="{Binding Path=Title}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Expander Grid.Column="1" Grid.Row="0" MinWidth="200">
+            <Expander.Header>
+                <Grid MinWidth="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Expander}},Path=ActualWidth}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                        <ComboBox Grid.Column="0" ItemsSource="{Binding Path=Connections}"
+                                      SelectedItem="{Binding Path=Selected}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Title}" Foreground="{Binding Path=IsValid, Converter={StaticResource ResourceKey=BoolToBrush}}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Button Grid.Column="1" Margin="10,0,0,0" Content="View Schema Stats" Style="{StaticResource CommandButton}" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=ViewSchemaStatsCommand}"/>
+                    
+
+                    <!--<StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <TextBlock Text="Error Log Schema:" Margin="10,0,0,0" FontWeight="Medium"/>
+                        <TextBlock Text="{Binding Path=Selected.ErrorSchema}" Margin="5,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <TextBlock Text="Api Log Schema:" Margin="10,0,0,0" FontWeight="Medium"/>
+                        <TextBlock Text="{Binding Path=Selected.ApiSchema}" Margin="5,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3" Orientation="Horizontal">
+                        <TextBlock Text="Session Log Schema:" Margin="10,0,0,0" FontWeight="Medium"/>
+                        <TextBlock Text="{Binding Path=Selected.SessionSchema}" Margin="5,0,0,0"/>
+                    </StackPanel>-->
+                </Grid>
+            </Expander.Header>
+            <Expander.Content>
+                <Border CornerRadius="15" Background="Gainsboro" Margin="25,5">
+                    <Grid Margin="40,20" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="100"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Button Grid.Column="0" Grid.Row="2" Style="{StaticResource CommandButton}"  Content="Add Connection" Command="{Binding Path=AddConnectionCommand}" />
+                        <ListBox Grid.Column="0"
+                                 Name="lsbConnections"
+                                 ItemsSource="{Binding Path=Connections}" >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Title}" Foreground="{Binding Path=IsValid, Converter={StaticResource ResourceKey=BoolToBrush}}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Grid Grid.Column="2" IsEnabled="{Binding Path=IsConnectionSelected}" DataContext="{Binding ElementName=lsbConnections, Path=SelectedItem}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Foreground="Gray" Text="Title:"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Foreground="Gray" Text="ConnectionString:"/>
+                            <TextBlock Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right" Foreground="Gray" Text="Error Schema:"/>
+                            <TextBlock Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right" Foreground="Gray" Text="Api Schema:"/>
+                            <TextBlock Grid.Column="0" Grid.Row="8" HorizontalAlignment="Right" Foreground="Gray" Text="Session Schema:"/>
+
+                            <TextBox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="3" Text="{Binding Path=Title}"/>
+                            <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Path=ConnectionString}"/>
+
+                            <ComboBox Grid.Column="2" Grid.Row="4" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=ErrorSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Source={StaticResource ResourceKey=LogSchemaTypes}}"/>
+                            <ComboBox Grid.Column="2" Grid.Row="6" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=ApiSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Source={StaticResource ResourceKey=LogSchemaTypes}}"/>
+                            <ComboBox Grid.Column="2" Grid.Row="8" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=SessionSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Source={StaticResource ResourceKey=LogSchemaTypes}}"/>
+
+
+                            <ComboBox Grid.Column="3" Grid.Row="4" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=SelectedErrorSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Path=ErrorSchemas}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Domain}" FontWeight="{Binding Path=IsSelected, Converter={StaticResource ResourceKey=BoolToFontWeight}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <ComboBox Grid.Column="3" Grid.Row="6" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=SelectedApiSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Path=ApiSchemas}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Domain}" FontWeight="{Binding Path=IsSelected, Converter={StaticResource ResourceKey=BoolToFontWeight}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <ComboBox Grid.Column="3" Grid.Row="8" MinWidth="125" Validation.ErrorTemplate="{x:Null}"  HorizontalAlignment="Left"  
+                                              SelectedItem="{Binding Path=SelectedSessionSchema, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
+                                              ItemsSource="{Binding Path=SessionSchemas}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Domain}" FontWeight="{Binding Path=IsSelected, Converter={StaticResource ResourceKey=BoolToFontWeight}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            
+                        </Grid> 
+                    </Grid>
+            
+                              
+                </Border>
+  
+            </Expander.Content>
+        </Expander>
+
+        <Grid  Grid.Column="1" Grid.Row="1" DataContext="{Binding ElementName=lsbItems, Path=SelectedItem}" Margin="5">
+            <ContentControl Content="{Binding}"  ContentTemplateSelector="{StaticResource MappedSelector}" />
+        </Grid>
+
+        <Grid x:Name="grdOverlay" Visibility="Collapsed" Grid.RowSpan="2" Grid.Column="1">
+            <Canvas Background="White" Opacity="0.5"/>
+            <Border Margin="40" CornerRadius="20" BorderBrush="LightGray" BorderThickness="3"  Background="White">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnCloseOverlay" Click="btnCloseOverlay_Click" 
+                            HorizontalAlignment="Center" 
+                            
+                            VerticalAlignment="Center" 
+                            Grid.Column="2" Grid.Row="0" 
+                            FontSize="24" Foreground="DarkGray"
+                            FontFamily="Wingdings" Content="ý" />
+                    <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" x:Name="grdContent">
+
+                    </Grid>
+                </Grid>
+
+            </Border>
+        </Grid>
+
+    </Grid>
+</UserControl>

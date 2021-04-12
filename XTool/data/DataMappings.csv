@@ -1,0 +1,44 @@
+﻿SQL Server Database Engine type,.NET Framework type,SqlDbType enumeration,SqlDataReader SqlTypes typed accessor,DbType enumeration,SqlDataReader DbType typed accessor
+bigint,Int64,BigInt,GetSqlInt64,Int64,GetInt64
+binary,Byte[],VarBinary,GetSqlBinary,Binary,GetBytes
+bit,Boolean,Bit,GetSqlBoolean,Boolean,GetBoolean
+char,String,Char,GetSqlString,"AnsiStringFixedLength,",GetString
+,Char[],,,String,GetChars
+date,DateTime,Date,GetSqlDateTime,Date,GetDateTime
+(SQL Server 2008 only),,,,,
+datetime,DateTime,DateTime,GetSqlDateTime,DateTime,GetDateTime
+datetime,DateTime,DateTime2,None,DateTime2,GetDateTime
+(SQL Server 2008 only),,,,,
+datetimeoffset,DateTimeOffset,DateTimeOffset,none,DateTimeOffset,GetDateTimeOffset
+(SQL Server 2008 only),,,,,
+decimal,Decimal,Decimal,GetSqlDecimal,Decimal,GetDecimal
+FILESTREAM attribute (varbinary(max),Byte[],VarBinary,GetSqlBytes,Binary,GetBytes
+float,Double,Float,GetSqlDouble,Double,GetDouble
+image,Byte[],Binary,GetSqlBinary,Binary,GetBytes
+int,Int32,Int,GetSqlInt32,Int32,GetInt32
+money,Decimal,Money,GetSqlMoney,Decimal,GetDecimal
+nchar,String,NChar,GetSqlString,StringFixedLength,GetString
+,Char[],,,,GetChars
+ntext,String,NText,GetSqlString,String,GetString
+,Char[],,,,GetChars
+numeric,Decimal,Decimal,GetSqlDecimal,Decimal,GetDecimal
+nvarchar,String,NVarChar,GetSqlString,String,GetString
+,Char[],,,,GetChars
+real,Single,Real,GetSqlSingle,Single,GetFloat
+rowversion,Byte[],Timestamp,GetSqlBinary,Binary,GetBytes
+smalldatetime,DateTime,DateTime,GetSqlDateTime,DateTime,GetDateTime
+smallint,Int16,SmallInt,GetSqlInt16,Int16,GetInt16
+smallmoney,Decimal,SmallMoney,GetSqlDecimal,Decimal,GetDecimal
+sql_variant,Object *,Variant,GetSqlValue *,Object,GetValue *
+text,String,Text,GetSqlString,String,GetString
+,Char[],,,,GetChars
+time,TimeSpan,Time,none,Time,GetDateTime
+(SQL Server 2008 only),,,,,
+timestamp,Byte[],Timestamp,GetSqlBinary,Binary,GetBytes
+tinyint,Byte,TinyInt,GetSqlByte,Byte,GetByte
+uniqueidentifier,Guid,UniqueIdentifier,GetSqlGuid,Guid,GetGuid
+varbinary,Byte[],VarBinary,GetSqlBinary,Binary,GetBytes
+varchar,String,VarChar,GetSqlString,"AnsiString, String",GetString
+,Char[],,,,GetChars
+xml,Xml,Xml,GetSqlXml,Xml,none
+* Use a specific typed accessor if you know the underlying type of the sql_variant.,,,,,

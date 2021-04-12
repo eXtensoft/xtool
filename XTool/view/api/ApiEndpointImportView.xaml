@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="XTool.ApiEndpointImportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+             xmlns:local="clr-namespace:XTool" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type local:JObjectViewModel}" ItemsSource="{Binding Path=Items}">
+            <TextBlock Text="{Binding Path=Name}" Foreground="Blue"/>
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate DataType="{x:Type local:JPropertyViewModel}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Path=Name}" Foreground="Gray" Padding="0,0,10,0"/>
+                <TextBlock Text="{Binding Path=Value}" Foreground="Red"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate DataType="{x:Type local:JArrayViewModel}" ItemsSource="{Binding Path=Items}">
+            <TextBlock Text="{Binding Path=Name}" Foreground="Green"/>
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Parse" Command="{Binding Path=ParseEndpointsCommand}" Grid.Column="0" Grid.Row="0"/>
+        <Button Content="Import" Command="{Binding Path=AddEndpointsCommand}" Grid.Column="1" Grid.Row="0"/>
+        <TabControl Grid.Row="2" Grid.ColumnSpan="3" Margin="10">
+            <TabItem Header="Raw">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox Grid.Row="2" AcceptsReturn="True" Name="txbRawInput" AcceptsTab="True"
+                             VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"
+                             Text="{Binding Path=RawInput}" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Parsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TreeView Name="trvItems" Grid.Row="2" 
+                               ItemsSource="{Binding Path=Items}"  >
+                        </TreeView>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tabular">
+                <DataGrid ItemsSource="{Binding Path=TabularData}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=Order}" Header="Order" />
+                        <DataGridTextColumn Binding="{Binding Path=HttpMethod}" Header="Http Method" />
+                        <DataGridTextColumn Binding="{Binding Path=Moniker}" Header="Name" />
+                        <DataGridTextColumn Binding="{Binding Path=Pattern}" Header="Url Pattern" />
+                        <DataGridTextColumn Binding="{Binding Path=Params}" Header="Parameters" Width="*" />
+                        <DataGridTextColumn Binding="{Binding Path=Key}" Header="Key"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <!--
+        <TextBox Grid.Row="2" Grid.ColumnSpan="3" VerticalScrollBarVisibility="Visible" 
+                 HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" AcceptsTab="True"
+                 Text="{Binding Path=ImportUrls}"
+                 />-->
+    </Grid>
+</UserControl>

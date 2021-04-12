@@ -1,0 +1,3331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAsciiMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<AsciiMap>
+		<Int>0</Int>
+		<Oct>0</Oct>
+		<Hex>0</Hex>
+		<Bin>0</Bin>
+		<Symbol>NUL</Symbol>
+		<Html>&amp;#000;</Html>
+		<Name />
+		<Description>Null char</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>1</Int>
+		<Oct>1</Oct>
+		<Hex>1</Hex>
+		<Bin>1</Bin>
+		<Symbol>SOH</Symbol>
+		<Html>&amp;#001;</Html>
+		<Name />
+		<Description>Start of Heading</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>2</Int>
+		<Oct>2</Oct>
+		<Hex>2</Hex>
+		<Bin>10</Bin>
+		<Symbol>STX</Symbol>
+		<Html>&amp;#002;</Html>
+		<Name />
+		<Description>Start of Text</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>3</Int>
+		<Oct>3</Oct>
+		<Hex>3</Hex>
+		<Bin>11</Bin>
+		<Symbol>ETX</Symbol>
+		<Html>&amp;#003;</Html>
+		<Name />
+		<Description>End of Text</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>4</Int>
+		<Oct>4</Oct>
+		<Hex>4</Hex>
+		<Bin>100</Bin>
+		<Symbol>EOT</Symbol>
+		<Html>&amp;#004;</Html>
+		<Name />
+		<Description>End of Transmission</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>5</Int>
+		<Oct>5</Oct>
+		<Hex>5</Hex>
+		<Bin>101</Bin>
+		<Symbol>ENQ</Symbol>
+		<Html>&amp;#005;</Html>
+		<Name />
+		<Description>Enquiry</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>6</Int>
+		<Oct>6</Oct>
+		<Hex>6</Hex>
+		<Bin>110</Bin>
+		<Symbol>ACK</Symbol>
+		<Html>&amp;#006;</Html>
+		<Name />
+		<Description>Acknowledgment</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>7</Int>
+		<Oct>7</Oct>
+		<Hex>7</Hex>
+		<Bin>111</Bin>
+		<Symbol>BEL</Symbol>
+		<Html>&amp;#007;</Html>
+		<Name />
+		<Description>Bell</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>8</Int>
+		<Oct>10</Oct>
+		<Hex>8</Hex>
+		<Bin>1000</Bin>
+		<Symbol>BS</Symbol>
+		<Html>&amp;#008;</Html>
+		<Name />
+		<Description>Back Space</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>9</Int>
+		<Oct>11</Oct>
+		<Hex>9</Hex>
+		<Bin>1001</Bin>
+		<Symbol>HT</Symbol>
+		<Html>&amp;#009;</Html>
+		<Name />
+		<Description>Horizontal Tab</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>10</Int>
+		<Oct>12</Oct>
+		<Hex>0A</Hex>
+		<Bin>1010</Bin>
+		<Symbol>LF</Symbol>
+		<Html>&amp;#010;</Html>
+		<Name />
+		<Description>Line Feed</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>11</Int>
+		<Oct>13</Oct>
+		<Hex>0B</Hex>
+		<Bin>1011</Bin>
+		<Symbol>VT</Symbol>
+		<Html>&amp;#011;</Html>
+		<Name />
+		<Description>Vertical Tab</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>12</Int>
+		<Oct>14</Oct>
+		<Hex>0C</Hex>
+		<Bin>1100</Bin>
+		<Symbol>FF</Symbol>
+		<Html>&amp;#012;</Html>
+		<Name />
+		<Description>Form Feed</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>13</Int>
+		<Oct>15</Oct>
+		<Hex>0D</Hex>
+		<Bin>1101</Bin>
+		<Symbol>CR</Symbol>
+		<Html>&amp;#013;</Html>
+		<Name />
+		<Description>Carriage Return</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>14</Int>
+		<Oct>16</Oct>
+		<Hex>0E</Hex>
+		<Bin>1110</Bin>
+		<Symbol>SO</Symbol>
+		<Html>&amp;#014;</Html>
+		<Name />
+		<Description>Shift Out / X-On</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>15</Int>
+		<Oct>17</Oct>
+		<Hex>0F</Hex>
+		<Bin>1111</Bin>
+		<Symbol>SI</Symbol>
+		<Html>&amp;#015;</Html>
+		<Name />
+		<Description>Shift In / X-Off</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>16</Int>
+		<Oct>20</Oct>
+		<Hex>10</Hex>
+		<Bin>10000</Bin>
+		<Symbol>DLE</Symbol>
+		<Html>&amp;#016;</Html>
+		<Name />
+		<Description>Data Line Escape</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>17</Int>
+		<Oct>21</Oct>
+		<Hex>11</Hex>
+		<Bin>10001</Bin>
+		<Symbol>DC1</Symbol>
+		<Html>&amp;#017;</Html>
+		<Name />
+		<Description>Device Control 1 (oft. XON)</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>18</Int>
+		<Oct>22</Oct>
+		<Hex>12</Hex>
+		<Bin>10010</Bin>
+		<Symbol>DC2</Symbol>
+		<Html>&amp;#018;</Html>
+		<Name />
+		<Description>Device Control 2</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>19</Int>
+		<Oct>23</Oct>
+		<Hex>13</Hex>
+		<Bin>10011</Bin>
+		<Symbol>DC3</Symbol>
+		<Html>&amp;#019;</Html>
+		<Name />
+		<Description>Device Control 3 (oft. XOFF)</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>20</Int>
+		<Oct>24</Oct>
+		<Hex>14</Hex>
+		<Bin>10100</Bin>
+		<Symbol>DC4</Symbol>
+		<Html>&amp;#020;</Html>
+		<Name />
+		<Description>Device Control 4</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>21</Int>
+		<Oct>25</Oct>
+		<Hex>15</Hex>
+		<Bin>10101</Bin>
+		<Symbol>NAK</Symbol>
+		<Html>&amp;#021;</Html>
+		<Name />
+		<Description>Negative Acknowledgement</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>22</Int>
+		<Oct>26</Oct>
+		<Hex>16</Hex>
+		<Bin>10110</Bin>
+		<Symbol>SYN</Symbol>
+		<Html>&amp;#022;</Html>
+		<Name />
+		<Description>Synchronous Idle</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>23</Int>
+		<Oct>27</Oct>
+		<Hex>17</Hex>
+		<Bin>10111</Bin>
+		<Symbol>ETB</Symbol>
+		<Html>&amp;#023;</Html>
+		<Name />
+		<Description>End of Transmit Block</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>24</Int>
+		<Oct>30</Oct>
+		<Hex>18</Hex>
+		<Bin>11000</Bin>
+		<Symbol>CAN</Symbol>
+		<Html>&amp;#024;</Html>
+		<Name />
+		<Description>Cancel</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>25</Int>
+		<Oct>31</Oct>
+		<Hex>19</Hex>
+		<Bin>11001</Bin>
+		<Symbol>EM</Symbol>
+		<Html>&amp;#025;</Html>
+		<Name />
+		<Description>End of Medium</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>26</Int>
+		<Oct>32</Oct>
+		<Hex>1A</Hex>
+		<Bin>11010</Bin>
+		<Symbol>SUB</Symbol>
+		<Html>&amp;#026;</Html>
+		<Name />
+		<Description>Substitute</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>27</Int>
+		<Oct>33</Oct>
+		<Hex>1B</Hex>
+		<Bin>11011</Bin>
+		<Symbol>ESC</Symbol>
+		<Html>&amp;#027;</Html>
+		<Name />
+		<Description>Escape</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>28</Int>
+		<Oct>34</Oct>
+		<Hex>1C</Hex>
+		<Bin>11100</Bin>
+		<Symbol>FS</Symbol>
+		<Html>&amp;#028;</Html>
+		<Name />
+		<Description>File Separator</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>29</Int>
+		<Oct>35</Oct>
+		<Hex>1D</Hex>
+		<Bin>11101</Bin>
+		<Symbol>GS</Symbol>
+		<Html>&amp;#029;</Html>
+		<Name />
+		<Description>Group Separator</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>30</Int>
+		<Oct>36</Oct>
+		<Hex>1E</Hex>
+		<Bin>11110</Bin>
+		<Symbol>RS</Symbol>
+		<Html>&amp;#030;</Html>
+		<Name />
+		<Description>Record Separator</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>31</Int>
+		<Oct>37</Oct>
+		<Hex>1F</Hex>
+		<Bin>11111</Bin>
+		<Symbol>US</Symbol>
+		<Html>&amp;#031;</Html>
+		<Name />
+		<Description>Unit Separator</Description>
+		<Printable>false</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>32</Int>
+		<Oct>40</Oct>
+		<Hex>20</Hex>
+		<Bin>100000</Bin>
+		<Symbol />
+		<Html>&amp;#32;</Html>
+		<Name />
+		<Description>Space</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>33</Int>
+		<Oct>41</Oct>
+		<Hex>21</Hex>
+		<Bin>100001</Bin>
+		<Symbol>!</Symbol>
+		<Html>&amp;#33;</Html>
+		<Name />
+		<Description>Exclamation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>34</Int>
+		<Oct>42</Oct>
+		<Hex>22</Hex>
+		<Bin>100010</Bin>
+		<Symbol>""""</Symbol>
+		<Html>&amp;#34;</Html>
+		<Name>&amp;quot;</Name>
+		<Description>Double quotes (or speech marks)</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>35</Int>
+		<Oct>43</Oct>
+		<Hex>23</Hex>
+		<Bin>100011</Bin>
+		<Symbol>#</Symbol>
+		<Html>&amp;#35;</Html>
+		<Name />
+		<Description>Number</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>36</Int>
+		<Oct>44</Oct>
+		<Hex>24</Hex>
+		<Bin>100100</Bin>
+		<Symbol>$</Symbol>
+		<Html>&amp;#36;</Html>
+		<Name />
+		<Description>Dollar</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>37</Int>
+		<Oct>45</Oct>
+		<Hex>25</Hex>
+		<Bin>100101</Bin>
+		<Symbol>%</Symbol>
+		<Html>&amp;#37;</Html>
+		<Name />
+		<Description>Procenttecken</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>38</Int>
+		<Oct>46</Oct>
+		<Hex>26</Hex>
+		<Bin>100110</Bin>
+		<Symbol>&amp;</Symbol>
+		<Html>&amp;#38;</Html>
+		<Name>&amp;amp;</Name>
+		<Description>Ampersand</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>39</Int>
+		<Oct>47</Oct>
+		<Hex>27</Hex>
+		<Bin>100111</Bin>
+		<Symbol>'</Symbol>
+		<Html>&amp;#39;</Html>
+		<Name />
+		<Description>Single quote</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>40</Int>
+		<Oct>50</Oct>
+		<Hex>28</Hex>
+		<Bin>101000</Bin>
+		<Symbol>(</Symbol>
+		<Html>&amp;#40;</Html>
+		<Name />
+		<Description>Open parenthesis (or open bracket)</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>41</Int>
+		<Oct>51</Oct>
+		<Hex>29</Hex>
+		<Bin>101001</Bin>
+		<Symbol>)</Symbol>
+		<Html>&amp;#41;</Html>
+		<Name />
+		<Description>Close parenthesis (or close bracket)</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>42</Int>
+		<Oct>52</Oct>
+		<Hex>2A</Hex>
+		<Bin>101010</Bin>
+		<Symbol>*</Symbol>
+		<Html>&amp;#42;</Html>
+		<Name />
+		<Description>Asterisk</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>43</Int>
+		<Oct>53</Oct>
+		<Hex>2B</Hex>
+		<Bin>101011</Bin>
+		<Symbol>+</Symbol>
+		<Html>&amp;#43;</Html>
+		<Name />
+		<Description>Plus</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>44</Int>
+		<Oct>54</Oct>
+		<Hex>2C</Hex>
+		<Bin>101100</Bin>
+		<Symbol>","</Symbol>
+		<Html>&amp;#44;</Html>
+		<Name />
+		<Description>Comma</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>45</Int>
+		<Oct>55</Oct>
+		<Hex>2D</Hex>
+		<Bin>101101</Bin>
+		<Symbol>-</Symbol>
+		<Html>&amp;#45;</Html>
+		<Name />
+		<Description>Hyphen</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>46</Int>
+		<Oct>56</Oct>
+		<Hex>2E</Hex>
+		<Bin>101110</Bin>
+		<Symbol>.</Symbol>
+		<Html>&amp;#46;</Html>
+		<Name />
+		<Description>"Period, dot or full stop"</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>47</Int>
+		<Oct>57</Oct>
+		<Hex>2F</Hex>
+		<Bin>101111</Bin>
+		<Symbol>/</Symbol>
+		<Html>&amp;#47;</Html>
+		<Name />
+		<Description>Slash or divide</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>48</Int>
+		<Oct>60</Oct>
+		<Hex>30</Hex>
+		<Bin>110000</Bin>
+		<Symbol>0</Symbol>
+		<Html>&amp;#48;</Html>
+		<Name />
+		<Description>Zero</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>49</Int>
+		<Oct>61</Oct>
+		<Hex>31</Hex>
+		<Bin>110001</Bin>
+		<Symbol>1</Symbol>
+		<Html>&amp;#49;</Html>
+		<Name />
+		<Description>One</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>50</Int>
+		<Oct>62</Oct>
+		<Hex>32</Hex>
+		<Bin>110010</Bin>
+		<Symbol>2</Symbol>
+		<Html>&amp;#50;</Html>
+		<Name />
+		<Description>Two</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>51</Int>
+		<Oct>63</Oct>
+		<Hex>33</Hex>
+		<Bin>110011</Bin>
+		<Symbol>3</Symbol>
+		<Html>&amp;#51;</Html>
+		<Name />
+		<Description>Three</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>52</Int>
+		<Oct>64</Oct>
+		<Hex>34</Hex>
+		<Bin>110100</Bin>
+		<Symbol>4</Symbol>
+		<Html>&amp;#52;</Html>
+		<Name />
+		<Description>Four</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>53</Int>
+		<Oct>65</Oct>
+		<Hex>35</Hex>
+		<Bin>110101</Bin>
+		<Symbol>5</Symbol>
+		<Html>&amp;#53;</Html>
+		<Name />
+		<Description>Five</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>54</Int>
+		<Oct>66</Oct>
+		<Hex>36</Hex>
+		<Bin>110110</Bin>
+		<Symbol>6</Symbol>
+		<Html>&amp;#54;</Html>
+		<Name />
+		<Description>Six</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>55</Int>
+		<Oct>67</Oct>
+		<Hex>37</Hex>
+		<Bin>110111</Bin>
+		<Symbol>7</Symbol>
+		<Html>&amp;#55;</Html>
+		<Name />
+		<Description>Seven</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>56</Int>
+		<Oct>70</Oct>
+		<Hex>38</Hex>
+		<Bin>111000</Bin>
+		<Symbol>8</Symbol>
+		<Html>&amp;#56;</Html>
+		<Name />
+		<Description>Eight</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>57</Int>
+		<Oct>71</Oct>
+		<Hex>39</Hex>
+		<Bin>111001</Bin>
+		<Symbol>9</Symbol>
+		<Html>&amp;#57;</Html>
+		<Name />
+		<Description>Nine</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>true</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>58</Int>
+		<Oct>72</Oct>
+		<Hex>3A</Hex>
+		<Bin>111010</Bin>
+		<Symbol>:</Symbol>
+		<Html>&amp;#58;</Html>
+		<Name />
+		<Description>Colon</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>59</Int>
+		<Oct>73</Oct>
+		<Hex>3B</Hex>
+		<Bin>111011</Bin>
+		<Symbol>;</Symbol>
+		<Html>&amp;#59;</Html>
+		<Name />
+		<Description>Semicolon</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>60</Int>
+		<Oct>74</Oct>
+		<Hex>3C</Hex>
+		<Bin>111100</Bin>
+		<Symbol>&lt;</Symbol>
+		<Html>&amp;#60;</Html>
+		<Name>&amp;lt;</Name>
+		<Description>Less than (or open angled bracket)</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>61</Int>
+		<Oct>75</Oct>
+		<Hex>3D</Hex>
+		<Bin>111101</Bin>
+		<Symbol>=</Symbol>
+		<Html>&amp;#61;</Html>
+		<Name />
+		<Description>Equals</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>62</Int>
+		<Oct>76</Oct>
+		<Hex>3E</Hex>
+		<Bin>111110</Bin>
+		<Symbol>&gt;</Symbol>
+		<Html>&amp;#62;</Html>
+		<Name>&amp;gt;</Name>
+		<Description>Greater than (or close angled bracket)</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>63</Int>
+		<Oct>77</Oct>
+		<Hex>3F</Hex>
+		<Bin>111111</Bin>
+		<Symbol>?</Symbol>
+		<Html>&amp;#63;</Html>
+		<Name />
+		<Description>Question mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>64</Int>
+		<Oct>100</Oct>
+		<Hex>40</Hex>
+		<Bin>1000000</Bin>
+		<Symbol>@</Symbol>
+		<Html>&amp;#64;</Html>
+		<Name />
+		<Description>At symbol</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>65</Int>
+		<Oct>101</Oct>
+		<Hex>41</Hex>
+		<Bin>1000001</Bin>
+		<Symbol>A</Symbol>
+		<Html>&amp;#65;</Html>
+		<Name />
+		<Description>Uppercase A</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>66</Int>
+		<Oct>102</Oct>
+		<Hex>42</Hex>
+		<Bin>1000010</Bin>
+		<Symbol>B</Symbol>
+		<Html>&amp;#66;</Html>
+		<Name />
+		<Description>Uppercase B</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>67</Int>
+		<Oct>103</Oct>
+		<Hex>43</Hex>
+		<Bin>1000011</Bin>
+		<Symbol>C</Symbol>
+		<Html>&amp;#67;</Html>
+		<Name />
+		<Description>Uppercase C</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>68</Int>
+		<Oct>104</Oct>
+		<Hex>44</Hex>
+		<Bin>1000100</Bin>
+		<Symbol>D</Symbol>
+		<Html>&amp;#68;</Html>
+		<Name />
+		<Description>Uppercase D</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>69</Int>
+		<Oct>105</Oct>
+		<Hex>45</Hex>
+		<Bin>1000101</Bin>
+		<Symbol>E</Symbol>
+		<Html>&amp;#69;</Html>
+		<Name />
+		<Description>Uppercase E</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>70</Int>
+		<Oct>106</Oct>
+		<Hex>46</Hex>
+		<Bin>1000110</Bin>
+		<Symbol>F</Symbol>
+		<Html>&amp;#70;</Html>
+		<Name />
+		<Description>Uppercase F</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>71</Int>
+		<Oct>107</Oct>
+		<Hex>47</Hex>
+		<Bin>1000111</Bin>
+		<Symbol>G</Symbol>
+		<Html>&amp;#71;</Html>
+		<Name />
+		<Description>Uppercase G</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>72</Int>
+		<Oct>110</Oct>
+		<Hex>48</Hex>
+		<Bin>1001000</Bin>
+		<Symbol>H</Symbol>
+		<Html>&amp;#72;</Html>
+		<Name />
+		<Description>Uppercase H</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>73</Int>
+		<Oct>111</Oct>
+		<Hex>49</Hex>
+		<Bin>1001001</Bin>
+		<Symbol>I</Symbol>
+		<Html>&amp;#73;</Html>
+		<Name />
+		<Description>Uppercase I</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>74</Int>
+		<Oct>112</Oct>
+		<Hex>4A</Hex>
+		<Bin>1001010</Bin>
+		<Symbol>J</Symbol>
+		<Html>&amp;#74;</Html>
+		<Name />
+		<Description>Uppercase J</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>75</Int>
+		<Oct>113</Oct>
+		<Hex>4B</Hex>
+		<Bin>1001011</Bin>
+		<Symbol>K</Symbol>
+		<Html>&amp;#75;</Html>
+		<Name />
+		<Description>Uppercase K</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>76</Int>
+		<Oct>114</Oct>
+		<Hex>4C</Hex>
+		<Bin>1001100</Bin>
+		<Symbol>L</Symbol>
+		<Html>&amp;#76;</Html>
+		<Name />
+		<Description>Uppercase L</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>77</Int>
+		<Oct>115</Oct>
+		<Hex>4D</Hex>
+		<Bin>1001101</Bin>
+		<Symbol>M</Symbol>
+		<Html>&amp;#77;</Html>
+		<Name />
+		<Description>Uppercase M</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>78</Int>
+		<Oct>116</Oct>
+		<Hex>4E</Hex>
+		<Bin>1001110</Bin>
+		<Symbol>N</Symbol>
+		<Html>&amp;#78;</Html>
+		<Name />
+		<Description>Uppercase N</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>79</Int>
+		<Oct>117</Oct>
+		<Hex>4F</Hex>
+		<Bin>1001111</Bin>
+		<Symbol>O</Symbol>
+		<Html>&amp;#79;</Html>
+		<Name />
+		<Description>Uppercase O</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>80</Int>
+		<Oct>120</Oct>
+		<Hex>50</Hex>
+		<Bin>1010000</Bin>
+		<Symbol>P</Symbol>
+		<Html>&amp;#80;</Html>
+		<Name />
+		<Description>Uppercase P</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>81</Int>
+		<Oct>121</Oct>
+		<Hex>51</Hex>
+		<Bin>1010001</Bin>
+		<Symbol>Q</Symbol>
+		<Html>&amp;#81;</Html>
+		<Name />
+		<Description>Uppercase Q</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>82</Int>
+		<Oct>122</Oct>
+		<Hex>52</Hex>
+		<Bin>1010010</Bin>
+		<Symbol>R</Symbol>
+		<Html>&amp;#82;</Html>
+		<Name />
+		<Description>Uppercase R</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>83</Int>
+		<Oct>123</Oct>
+		<Hex>53</Hex>
+		<Bin>1010011</Bin>
+		<Symbol>S</Symbol>
+		<Html>&amp;#83;</Html>
+		<Name />
+		<Description>Uppercase S</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>84</Int>
+		<Oct>124</Oct>
+		<Hex>54</Hex>
+		<Bin>1010100</Bin>
+		<Symbol>T</Symbol>
+		<Html>&amp;#84;</Html>
+		<Name />
+		<Description>Uppercase T</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>85</Int>
+		<Oct>125</Oct>
+		<Hex>55</Hex>
+		<Bin>1010101</Bin>
+		<Symbol>U</Symbol>
+		<Html>&amp;#85;</Html>
+		<Name />
+		<Description>Uppercase U</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>86</Int>
+		<Oct>126</Oct>
+		<Hex>56</Hex>
+		<Bin>1010110</Bin>
+		<Symbol>V</Symbol>
+		<Html>&amp;#86;</Html>
+		<Name />
+		<Description>Uppercase V</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>87</Int>
+		<Oct>127</Oct>
+		<Hex>57</Hex>
+		<Bin>1010111</Bin>
+		<Symbol>W</Symbol>
+		<Html>&amp;#87;</Html>
+		<Name />
+		<Description>Uppercase W</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>88</Int>
+		<Oct>130</Oct>
+		<Hex>58</Hex>
+		<Bin>1011000</Bin>
+		<Symbol>X</Symbol>
+		<Html>&amp;#88;</Html>
+		<Name />
+		<Description>Uppercase X</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>89</Int>
+		<Oct>131</Oct>
+		<Hex>59</Hex>
+		<Bin>1011001</Bin>
+		<Symbol>Y</Symbol>
+		<Html>&amp;#89;</Html>
+		<Name />
+		<Description>Uppercase Y</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>90</Int>
+		<Oct>132</Oct>
+		<Hex>5A</Hex>
+		<Bin>1011010</Bin>
+		<Symbol>Z</Symbol>
+		<Html>&amp;#90;</Html>
+		<Name />
+		<Description>Uppercase Z</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>91</Int>
+		<Oct>133</Oct>
+		<Hex>5B</Hex>
+		<Bin>1011011</Bin>
+		<Symbol>[</Symbol>
+		<Html>&amp;#91;</Html>
+		<Name />
+		<Description>Opening bracket</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>92</Int>
+		<Oct>134</Oct>
+		<Hex>5C</Hex>
+		<Bin>1011100</Bin>
+		<Symbol>\</Symbol>
+		<Html>&amp;#92;</Html>
+		<Name />
+		<Description>Backslash</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>93</Int>
+		<Oct>135</Oct>
+		<Hex>5D</Hex>
+		<Bin>1011101</Bin>
+		<Symbol>]</Symbol>
+		<Html>&amp;#93;</Html>
+		<Name />
+		<Description>Closing bracket</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>94</Int>
+		<Oct>136</Oct>
+		<Hex>5E</Hex>
+		<Bin>1011110</Bin>
+		<Symbol>^</Symbol>
+		<Html>&amp;#94;</Html>
+		<Name />
+		<Description>Caret - circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>95</Int>
+		<Oct>137</Oct>
+		<Hex>5F</Hex>
+		<Bin>1011111</Bin>
+		<Symbol>_</Symbol>
+		<Html>&amp;#95;</Html>
+		<Name />
+		<Description>Underscore</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>96</Int>
+		<Oct>140</Oct>
+		<Hex>60</Hex>
+		<Bin>1100000</Bin>
+		<Symbol>`</Symbol>
+		<Html>&amp;#96;</Html>
+		<Name />
+		<Description>Grave accent</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>97</Int>
+		<Oct>141</Oct>
+		<Hex>61</Hex>
+		<Bin>1100001</Bin>
+		<Symbol>a</Symbol>
+		<Html>&amp;#97;</Html>
+		<Name />
+		<Description>Lowercase a</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>98</Int>
+		<Oct>142</Oct>
+		<Hex>62</Hex>
+		<Bin>1100010</Bin>
+		<Symbol>b</Symbol>
+		<Html>&amp;#98;</Html>
+		<Name />
+		<Description>Lowercase b</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>99</Int>
+		<Oct>143</Oct>
+		<Hex>63</Hex>
+		<Bin>1100011</Bin>
+		<Symbol>c</Symbol>
+		<Html>&amp;#99;</Html>
+		<Name />
+		<Description>Lowercase c</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>100</Int>
+		<Oct>144</Oct>
+		<Hex>64</Hex>
+		<Bin>1100100</Bin>
+		<Symbol>d</Symbol>
+		<Html>&amp;#100;</Html>
+		<Name />
+		<Description>Lowercase d</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>101</Int>
+		<Oct>145</Oct>
+		<Hex>65</Hex>
+		<Bin>1100101</Bin>
+		<Symbol>e</Symbol>
+		<Html>&amp;#101;</Html>
+		<Name />
+		<Description>Lowercase e</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>102</Int>
+		<Oct>146</Oct>
+		<Hex>66</Hex>
+		<Bin>1100110</Bin>
+		<Symbol>f</Symbol>
+		<Html>&amp;#102;</Html>
+		<Name />
+		<Description>Lowercase f</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>103</Int>
+		<Oct>147</Oct>
+		<Hex>67</Hex>
+		<Bin>1100111</Bin>
+		<Symbol>g</Symbol>
+		<Html>&amp;#103;</Html>
+		<Name />
+		<Description>Lowercase g</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>104</Int>
+		<Oct>150</Oct>
+		<Hex>68</Hex>
+		<Bin>1101000</Bin>
+		<Symbol>h</Symbol>
+		<Html>&amp;#104;</Html>
+		<Name />
+		<Description>Lowercase h</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>105</Int>
+		<Oct>151</Oct>
+		<Hex>69</Hex>
+		<Bin>1101001</Bin>
+		<Symbol>i</Symbol>
+		<Html>&amp;#105;</Html>
+		<Name />
+		<Description>Lowercase i</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>106</Int>
+		<Oct>152</Oct>
+		<Hex>6A</Hex>
+		<Bin>1101010</Bin>
+		<Symbol>j</Symbol>
+		<Html>&amp;#106;</Html>
+		<Name />
+		<Description>Lowercase j</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>107</Int>
+		<Oct>153</Oct>
+		<Hex>6B</Hex>
+		<Bin>1101011</Bin>
+		<Symbol>k</Symbol>
+		<Html>&amp;#107;</Html>
+		<Name />
+		<Description>Lowercase k</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>108</Int>
+		<Oct>154</Oct>
+		<Hex>6C</Hex>
+		<Bin>1101100</Bin>
+		<Symbol>l</Symbol>
+		<Html>&amp;#108;</Html>
+		<Name />
+		<Description>Lowercase l</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>109</Int>
+		<Oct>155</Oct>
+		<Hex>6D</Hex>
+		<Bin>1101101</Bin>
+		<Symbol>m</Symbol>
+		<Html>&amp;#109;</Html>
+		<Name />
+		<Description>Lowercase m</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>110</Int>
+		<Oct>156</Oct>
+		<Hex>6E</Hex>
+		<Bin>1101110</Bin>
+		<Symbol>n</Symbol>
+		<Html>&amp;#110;</Html>
+		<Name />
+		<Description>Lowercase n</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>111</Int>
+		<Oct>157</Oct>
+		<Hex>6F</Hex>
+		<Bin>1101111</Bin>
+		<Symbol>o</Symbol>
+		<Html>&amp;#111;</Html>
+		<Name />
+		<Description>Lowercase o</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>112</Int>
+		<Oct>160</Oct>
+		<Hex>70</Hex>
+		<Bin>1110000</Bin>
+		<Symbol>p</Symbol>
+		<Html>&amp;#112;</Html>
+		<Name />
+		<Description>Lowercase p</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>113</Int>
+		<Oct>161</Oct>
+		<Hex>71</Hex>
+		<Bin>1110001</Bin>
+		<Symbol>q</Symbol>
+		<Html>&amp;#113;</Html>
+		<Name />
+		<Description>Lowercase q</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>114</Int>
+		<Oct>162</Oct>
+		<Hex>72</Hex>
+		<Bin>1110010</Bin>
+		<Symbol>r</Symbol>
+		<Html>&amp;#114;</Html>
+		<Name />
+		<Description>Lowercase r</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>115</Int>
+		<Oct>163</Oct>
+		<Hex>73</Hex>
+		<Bin>1110011</Bin>
+		<Symbol>s</Symbol>
+		<Html>&amp;#115;</Html>
+		<Name />
+		<Description>Lowercase s</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>116</Int>
+		<Oct>164</Oct>
+		<Hex>74</Hex>
+		<Bin>1110100</Bin>
+		<Symbol>t</Symbol>
+		<Html>&amp;#116;</Html>
+		<Name />
+		<Description>Lowercase t</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>117</Int>
+		<Oct>165</Oct>
+		<Hex>75</Hex>
+		<Bin>1110101</Bin>
+		<Symbol>u</Symbol>
+		<Html>&amp;#117;</Html>
+		<Name />
+		<Description>Lowercase u</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>118</Int>
+		<Oct>166</Oct>
+		<Hex>76</Hex>
+		<Bin>1110110</Bin>
+		<Symbol>v</Symbol>
+		<Html>&amp;#118;</Html>
+		<Name />
+		<Description>Lowercase v</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>119</Int>
+		<Oct>167</Oct>
+		<Hex>77</Hex>
+		<Bin>1110111</Bin>
+		<Symbol>w</Symbol>
+		<Html>&amp;#119;</Html>
+		<Name />
+		<Description>Lowercase w</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>120</Int>
+		<Oct>170</Oct>
+		<Hex>78</Hex>
+		<Bin>1111000</Bin>
+		<Symbol>x</Symbol>
+		<Html>&amp;#120;</Html>
+		<Name />
+		<Description>Lowercase x</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>121</Int>
+		<Oct>171</Oct>
+		<Hex>79</Hex>
+		<Bin>1111001</Bin>
+		<Symbol>y</Symbol>
+		<Html>&amp;#121;</Html>
+		<Name />
+		<Description>Lowercase y</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>122</Int>
+		<Oct>172</Oct>
+		<Hex>7A</Hex>
+		<Bin>1111010</Bin>
+		<Symbol>z</Symbol>
+		<Html>&amp;#122;</Html>
+		<Name />
+		<Description>Lowercase z</Description>
+		<Printable>true</Printable>
+		<IsAlpha>true</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>123</Int>
+		<Oct>173</Oct>
+		<Hex>7B</Hex>
+		<Bin>1111011</Bin>
+		<Symbol>{</Symbol>
+		<Html>&amp;#123;</Html>
+		<Name />
+		<Description>Opening brace</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>124</Int>
+		<Oct>174</Oct>
+		<Hex>7C</Hex>
+		<Bin>1111100</Bin>
+		<Symbol>|</Symbol>
+		<Html>&amp;#124;</Html>
+		<Name />
+		<Description>Vertical bar</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>125</Int>
+		<Oct>175</Oct>
+		<Hex>7D</Hex>
+		<Bin>1111101</Bin>
+		<Symbol>}</Symbol>
+		<Html>&amp;#125;</Html>
+		<Name />
+		<Description>Closing brace</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>126</Int>
+		<Oct>176</Oct>
+		<Hex>7E</Hex>
+		<Bin>1111110</Bin>
+		<Symbol>~</Symbol>
+		<Html>&amp;#126;</Html>
+		<Name />
+		<Description>Equivalency sign - tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>127</Int>
+		<Oct>177</Oct>
+		<Hex>7F</Hex>
+		<Bin>1111111</Bin>
+		<Symbol />
+		<Html>&amp;#127;</Html>
+		<Name />
+		<Description>Delete</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>128</Int>
+		<Oct>200</Oct>
+		<Hex>80</Hex>
+		<Bin>10000000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#128;</Html>
+		<Name>&amp;euro;</Name>
+		<Description>Euro sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>129</Int>
+		<Oct>201</Oct>
+		<Hex>81</Hex>
+		<Bin>10000001</Bin>
+		<Symbol />
+		<Html />
+		<Name />
+		<Description />
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>130</Int>
+		<Oct>202</Oct>
+		<Hex>82</Hex>
+		<Bin>10000010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#130;</Html>
+		<Name>&amp;sbquo;</Name>
+		<Description>Single low-9 quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>131</Int>
+		<Oct>203</Oct>
+		<Hex>83</Hex>
+		<Bin>10000011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#131;</Html>
+		<Name>&amp;fnof;</Name>
+		<Description>Latin small letter f with hook</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>132</Int>
+		<Oct>204</Oct>
+		<Hex>84</Hex>
+		<Bin>10000100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#132;</Html>
+		<Name>&amp;bdquo;</Name>
+		<Description>Double low-9 quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>133</Int>
+		<Oct>205</Oct>
+		<Hex>85</Hex>
+		<Bin>10000101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#133;</Html>
+		<Name>&amp;hellip;</Name>
+		<Description>Horizontal ellipsis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>134</Int>
+		<Oct>206</Oct>
+		<Hex>86</Hex>
+		<Bin>10000110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#134;</Html>
+		<Name>&amp;dagger;</Name>
+		<Description>Dagger</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>135</Int>
+		<Oct>207</Oct>
+		<Hex>87</Hex>
+		<Bin>10000111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#135;</Html>
+		<Name>&amp;Dagger;</Name>
+		<Description>Double dagger</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>136</Int>
+		<Oct>210</Oct>
+		<Hex>88</Hex>
+		<Bin>10001000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#136;</Html>
+		<Name>&amp;circ;</Name>
+		<Description>Modifier letter circumflex accent</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>137</Int>
+		<Oct>211</Oct>
+		<Hex>89</Hex>
+		<Bin>10001001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#137;</Html>
+		<Name>&amp;permil;</Name>
+		<Description>Per mille sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>138</Int>
+		<Oct>212</Oct>
+		<Hex>8A</Hex>
+		<Bin>10001010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#138;</Html>
+		<Name>&amp;Scaron;</Name>
+		<Description>Latin capital letter S with caron</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>139</Int>
+		<Oct>213</Oct>
+		<Hex>8B</Hex>
+		<Bin>10001011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#139;</Html>
+		<Name>&amp;lsaquo;</Name>
+		<Description>Single left-pointing angle quotation</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>140</Int>
+		<Oct>214</Oct>
+		<Hex>8C</Hex>
+		<Bin>10001100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#140;</Html>
+		<Name>&amp;OElig;</Name>
+		<Description>Latin capital ligature OE</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>141</Int>
+		<Oct>215</Oct>
+		<Hex>8D</Hex>
+		<Bin>10001101</Bin>
+		<Symbol />
+		<Html />
+		<Name />
+		<Description />
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>142</Int>
+		<Oct>216</Oct>
+		<Hex>8E</Hex>
+		<Bin>10001110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#142;</Html>
+		<Name />
+		<Description>Latin captial letter Z with caron</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>143</Int>
+		<Oct>217</Oct>
+		<Hex>8F</Hex>
+		<Bin>10001111</Bin>
+		<Symbol />
+		<Html />
+		<Name />
+		<Description />
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>144</Int>
+		<Oct>220</Oct>
+		<Hex>90</Hex>
+		<Bin>10010000</Bin>
+		<Symbol />
+		<Html />
+		<Name />
+		<Description />
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>145</Int>
+		<Oct>221</Oct>
+		<Hex>91</Hex>
+		<Bin>10010001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#145;</Html>
+		<Name>&amp;lsquo;</Name>
+		<Description>Left single quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>146</Int>
+		<Oct>222</Oct>
+		<Hex>92</Hex>
+		<Bin>10010010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#146;</Html>
+		<Name>&amp;rsquo;</Name>
+		<Description>Right single quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>147</Int>
+		<Oct>223</Oct>
+		<Hex>93</Hex>
+		<Bin>10010011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#147;</Html>
+		<Name>&amp;ldquo;</Name>
+		<Description>Left double quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>148</Int>
+		<Oct>224</Oct>
+		<Hex>94</Hex>
+		<Bin>10010100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#148;</Html>
+		<Name>&amp;rdquo;</Name>
+		<Description>Right double quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>149</Int>
+		<Oct>225</Oct>
+		<Hex>95</Hex>
+		<Bin>10010101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#149;</Html>
+		<Name>&amp;bull;</Name>
+		<Description>Bullet</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>150</Int>
+		<Oct>226</Oct>
+		<Hex>96</Hex>
+		<Bin>10010110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#150;</Html>
+		<Name>&amp;ndash;</Name>
+		<Description>En dash</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>151</Int>
+		<Oct>227</Oct>
+		<Hex>97</Hex>
+		<Bin>10010111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#151;</Html>
+		<Name>&amp;mdash;</Name>
+		<Description>Em dash</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>152</Int>
+		<Oct>230</Oct>
+		<Hex>98</Hex>
+		<Bin>10011000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#152;</Html>
+		<Name>&amp;tilde;</Name>
+		<Description>Small tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>153</Int>
+		<Oct>231</Oct>
+		<Hex>99</Hex>
+		<Bin>10011001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#153;</Html>
+		<Name>&amp;trade;</Name>
+		<Description>Trade mark sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>154</Int>
+		<Oct>232</Oct>
+		<Hex>9A</Hex>
+		<Bin>10011010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#154;</Html>
+		<Name>&amp;scaron;</Name>
+		<Description>Latin small letter S with caron</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>155</Int>
+		<Oct>233</Oct>
+		<Hex>9B</Hex>
+		<Bin>10011011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#155;</Html>
+		<Name>&amp;rsaquo;</Name>
+		<Description>Single right-pointing angle quotation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>156</Int>
+		<Oct>234</Oct>
+		<Hex>9C</Hex>
+		<Bin>10011100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#156;</Html>
+		<Name>&amp;oelig;</Name>
+		<Description>Latin small ligature oe</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>157</Int>
+		<Oct>235</Oct>
+		<Hex>9D</Hex>
+		<Bin>10011101</Bin>
+		<Symbol />
+		<Html />
+		<Name />
+		<Description />
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>158</Int>
+		<Oct>236</Oct>
+		<Hex>9E</Hex>
+		<Bin>10011110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#158;</Html>
+		<Name />
+		<Description>Latin small letter z with caron</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>159</Int>
+		<Oct>237</Oct>
+		<Hex>9F</Hex>
+		<Bin>10011111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#159;</Html>
+		<Name>&amp;yuml;</Name>
+		<Description>Latin capital letter Y with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>160</Int>
+		<Oct>240</Oct>
+		<Hex>A0</Hex>
+		<Bin>10100000</Bin>
+		<Symbol />
+		<Html>&amp;#160;</Html>
+		<Name>&amp;nbsp;</Name>
+		<Description>Non-breaking space</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>161</Int>
+		<Oct>241</Oct>
+		<Hex>A1</Hex>
+		<Bin>10100001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#161;</Html>
+		<Name>&amp;iexcl;</Name>
+		<Description>Inverted exclamation mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>162</Int>
+		<Oct>242</Oct>
+		<Hex>A2</Hex>
+		<Bin>10100010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#162;</Html>
+		<Name>&amp;cent;</Name>
+		<Description>Cent sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>163</Int>
+		<Oct>243</Oct>
+		<Hex>A3</Hex>
+		<Bin>10100011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#163;</Html>
+		<Name>&amp;pound;</Name>
+		<Description>Pound sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>164</Int>
+		<Oct>244</Oct>
+		<Hex>A4</Hex>
+		<Bin>10100100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#164;</Html>
+		<Name>&amp;curren;</Name>
+		<Description>Currency sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>165</Int>
+		<Oct>245</Oct>
+		<Hex>A5</Hex>
+		<Bin>10100101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#165;</Html>
+		<Name>&amp;yen;</Name>
+		<Description>Yen sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>166</Int>
+		<Oct>246</Oct>
+		<Hex>A6</Hex>
+		<Bin>10100110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#166;</Html>
+		<Name>&amp;brvbar;</Name>
+		<Description>"Pipe, Broken vertical bar"</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>167</Int>
+		<Oct>247</Oct>
+		<Hex>A7</Hex>
+		<Bin>10100111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#167;</Html>
+		<Name>&amp;sect;</Name>
+		<Description>Section sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>168</Int>
+		<Oct>250</Oct>
+		<Hex>A8</Hex>
+		<Bin>10101000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#168;</Html>
+		<Name>&amp;uml;</Name>
+		<Description>Spacing diaeresis - umlaut</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>169</Int>
+		<Oct>251</Oct>
+		<Hex>A9</Hex>
+		<Bin>10101001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#169;</Html>
+		<Name>&amp;copy;</Name>
+		<Description>Copyright sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>170</Int>
+		<Oct>252</Oct>
+		<Hex>AA</Hex>
+		<Bin>10101010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#170;</Html>
+		<Name>&amp;ordf;</Name>
+		<Description>Feminine ordinal indicator</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>171</Int>
+		<Oct>253</Oct>
+		<Hex>AB</Hex>
+		<Bin>10101011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#171;</Html>
+		<Name>&amp;laquo;</Name>
+		<Description>Left double angle quotes</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>172</Int>
+		<Oct>254</Oct>
+		<Hex>AC</Hex>
+		<Bin>10101100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#172;</Html>
+		<Name>&amp;not;</Name>
+		<Description>Not sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>173</Int>
+		<Oct>255</Oct>
+		<Hex>AD</Hex>
+		<Bin>10101101</Bin>
+		<Symbol />
+		<Html>&amp;#173;</Html>
+		<Name>&amp;shy;</Name>
+		<Description>Soft hyphen</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>174</Int>
+		<Oct>256</Oct>
+		<Hex>AE</Hex>
+		<Bin>10101110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#174;</Html>
+		<Name>&amp;reg;</Name>
+		<Description>Registered trade mark sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>175</Int>
+		<Oct>257</Oct>
+		<Hex>AF</Hex>
+		<Bin>10101111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#175;</Html>
+		<Name>&amp;macr;</Name>
+		<Description>Spacing macron - overline</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>176</Int>
+		<Oct>260</Oct>
+		<Hex>B0</Hex>
+		<Bin>10110000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#176;</Html>
+		<Name>&amp;deg;</Name>
+		<Description>Degree sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>177</Int>
+		<Oct>261</Oct>
+		<Hex>B1</Hex>
+		<Bin>10110001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#177;</Html>
+		<Name>&amp;plusmn;</Name>
+		<Description>Plus-or-minus sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>178</Int>
+		<Oct>262</Oct>
+		<Hex>B2</Hex>
+		<Bin>10110010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#178;</Html>
+		<Name>&amp;sup2;</Name>
+		<Description>Superscript two - squared</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>179</Int>
+		<Oct>263</Oct>
+		<Hex>B3</Hex>
+		<Bin>10110011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#179;</Html>
+		<Name>&amp;sup3;</Name>
+		<Description>Superscript three - cubed</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>180</Int>
+		<Oct>264</Oct>
+		<Hex>B4</Hex>
+		<Bin>10110100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#180;</Html>
+		<Name>&amp;acute;</Name>
+		<Description>Acute accent - spacing acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>181</Int>
+		<Oct>265</Oct>
+		<Hex>B5</Hex>
+		<Bin>10110101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#181;</Html>
+		<Name>&amp;micro;</Name>
+		<Description>Micro sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>182</Int>
+		<Oct>266</Oct>
+		<Hex>B6</Hex>
+		<Bin>10110110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#182;</Html>
+		<Name>&amp;para;</Name>
+		<Description>Pilcrow sign - paragraph sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>183</Int>
+		<Oct>267</Oct>
+		<Hex>B7</Hex>
+		<Bin>10110111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#183;</Html>
+		<Name>&amp;middot;</Name>
+		<Description>Middle dot - Georgian comma</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>184</Int>
+		<Oct>270</Oct>
+		<Hex>B8</Hex>
+		<Bin>10111000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#184;</Html>
+		<Name>&amp;cedil;</Name>
+		<Description>Spacing cedilla</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>185</Int>
+		<Oct>271</Oct>
+		<Hex>B9</Hex>
+		<Bin>10111001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#185;</Html>
+		<Name>&amp;sup1;</Name>
+		<Description>Superscript one</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>186</Int>
+		<Oct>272</Oct>
+		<Hex>BA</Hex>
+		<Bin>10111010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#186;</Html>
+		<Name>&amp;ordm;</Name>
+		<Description>Masculine ordinal indicator</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>187</Int>
+		<Oct>273</Oct>
+		<Hex>BB</Hex>
+		<Bin>10111011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#187;</Html>
+		<Name>&amp;raquo;</Name>
+		<Description>Right double angle quotes</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>188</Int>
+		<Oct>274</Oct>
+		<Hex>BC</Hex>
+		<Bin>10111100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#188;</Html>
+		<Name>&amp;frac14;</Name>
+		<Description>Fraction one quarter</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>189</Int>
+		<Oct>275</Oct>
+		<Hex>BD</Hex>
+		<Bin>10111101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#189;</Html>
+		<Name>&amp;frac12;</Name>
+		<Description>Fraction one half</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>190</Int>
+		<Oct>276</Oct>
+		<Hex>BE</Hex>
+		<Bin>10111110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#190;</Html>
+		<Name>&amp;frac34;</Name>
+		<Description>Fraction three quarters</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>191</Int>
+		<Oct>277</Oct>
+		<Hex>BF</Hex>
+		<Bin>10111111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#191;</Html>
+		<Name>&amp;iquest;</Name>
+		<Description>Inverted question mark</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>192</Int>
+		<Oct>300</Oct>
+		<Hex>C0</Hex>
+		<Bin>11000000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#192;</Html>
+		<Name>&amp;Agrave;</Name>
+		<Description>Latin capital letter A with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>193</Int>
+		<Oct>301</Oct>
+		<Hex>C1</Hex>
+		<Bin>11000001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#193;</Html>
+		<Name>&amp;Aacute;</Name>
+		<Description>Latin capital letter A with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>194</Int>
+		<Oct>302</Oct>
+		<Hex>C2</Hex>
+		<Bin>11000010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#194;</Html>
+		<Name>&amp;Acirc;</Name>
+		<Description>Latin capital letter A with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>195</Int>
+		<Oct>303</Oct>
+		<Hex>C3</Hex>
+		<Bin>11000011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#195;</Html>
+		<Name>&amp;Atilde;</Name>
+		<Description>Latin capital letter A with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>196</Int>
+		<Oct>304</Oct>
+		<Hex>C4</Hex>
+		<Bin>11000100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#196;</Html>
+		<Name>&amp;Auml;</Name>
+		<Description>Latin capital letter A with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>197</Int>
+		<Oct>305</Oct>
+		<Hex>C5</Hex>
+		<Bin>11000101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#197;</Html>
+		<Name>&amp;Aring;</Name>
+		<Description>Latin capital letter A with ring above</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>198</Int>
+		<Oct>306</Oct>
+		<Hex>C6</Hex>
+		<Bin>11000110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#198;</Html>
+		<Name>&amp;AElig;</Name>
+		<Description>Latin capital letter AE</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>199</Int>
+		<Oct>307</Oct>
+		<Hex>C7</Hex>
+		<Bin>11000111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#199;</Html>
+		<Name>&amp;Ccedil;</Name>
+		<Description>Latin capital letter C with cedilla</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>200</Int>
+		<Oct>310</Oct>
+		<Hex>C8</Hex>
+		<Bin>11001000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#200;</Html>
+		<Name>&amp;Egrave;</Name>
+		<Description>Latin capital letter E with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>201</Int>
+		<Oct>311</Oct>
+		<Hex>C9</Hex>
+		<Bin>11001001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#201;</Html>
+		<Name>&amp;Eacute;</Name>
+		<Description>Latin capital letter E with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>202</Int>
+		<Oct>312</Oct>
+		<Hex>CA</Hex>
+		<Bin>11001010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#202;</Html>
+		<Name>&amp;Ecirc;</Name>
+		<Description>Latin capital letter E with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>203</Int>
+		<Oct>313</Oct>
+		<Hex>CB</Hex>
+		<Bin>11001011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#203;</Html>
+		<Name>&amp;Euml;</Name>
+		<Description>Latin capital letter E with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>204</Int>
+		<Oct>314</Oct>
+		<Hex>CC</Hex>
+		<Bin>11001100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#204;</Html>
+		<Name>&amp;Igrave;</Name>
+		<Description>Latin capital letter I with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>205</Int>
+		<Oct>315</Oct>
+		<Hex>CD</Hex>
+		<Bin>11001101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#205;</Html>
+		<Name>&amp;Iacute;</Name>
+		<Description>Latin capital letter I with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>206</Int>
+		<Oct>316</Oct>
+		<Hex>CE</Hex>
+		<Bin>11001110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#206;</Html>
+		<Name>&amp;Icirc;</Name>
+		<Description>Latin capital letter I with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>207</Int>
+		<Oct>317</Oct>
+		<Hex>CF</Hex>
+		<Bin>11001111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#207;</Html>
+		<Name>&amp;Iuml;</Name>
+		<Description>Latin capital letter I with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>208</Int>
+		<Oct>320</Oct>
+		<Hex>D0</Hex>
+		<Bin>11010000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#208;</Html>
+		<Name>&amp;ETH;</Name>
+		<Description>Latin capital letter ETH</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>209</Int>
+		<Oct>321</Oct>
+		<Hex>D1</Hex>
+		<Bin>11010001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#209;</Html>
+		<Name>&amp;Ntilde;</Name>
+		<Description>Latin capital letter N with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>210</Int>
+		<Oct>322</Oct>
+		<Hex>D2</Hex>
+		<Bin>11010010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#210;</Html>
+		<Name>&amp;Ograve;</Name>
+		<Description>Latin capital letter O with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>211</Int>
+		<Oct>323</Oct>
+		<Hex>D3</Hex>
+		<Bin>11010011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#211;</Html>
+		<Name>&amp;Oacute;</Name>
+		<Description>Latin capital letter O with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>212</Int>
+		<Oct>324</Oct>
+		<Hex>D4</Hex>
+		<Bin>11010100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#212;</Html>
+		<Name>&amp;Ocirc;</Name>
+		<Description>Latin capital letter O with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>213</Int>
+		<Oct>325</Oct>
+		<Hex>D5</Hex>
+		<Bin>11010101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#213;</Html>
+		<Name>&amp;Otilde;</Name>
+		<Description>Latin capital letter O with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>214</Int>
+		<Oct>326</Oct>
+		<Hex>D6</Hex>
+		<Bin>11010110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#214;</Html>
+		<Name>&amp;Ouml;</Name>
+		<Description>Latin capital letter O with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>215</Int>
+		<Oct>327</Oct>
+		<Hex>D7</Hex>
+		<Bin>11010111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#215;</Html>
+		<Name>&amp;times;</Name>
+		<Description>Multiplication sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>216</Int>
+		<Oct>330</Oct>
+		<Hex>D8</Hex>
+		<Bin>11011000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#216;</Html>
+		<Name>&amp;Oslash;</Name>
+		<Description>Latin capital letter O with slash</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>217</Int>
+		<Oct>331</Oct>
+		<Hex>D9</Hex>
+		<Bin>11011001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#217;</Html>
+		<Name>&amp;Ugrave;</Name>
+		<Description>Latin capital letter U with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>218</Int>
+		<Oct>332</Oct>
+		<Hex>DA</Hex>
+		<Bin>11011010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#218;</Html>
+		<Name>&amp;Uacute;</Name>
+		<Description>Latin capital letter U with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>219</Int>
+		<Oct>333</Oct>
+		<Hex>DB</Hex>
+		<Bin>11011011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#219;</Html>
+		<Name>&amp;Ucirc;</Name>
+		<Description>Latin capital letter U with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>220</Int>
+		<Oct>334</Oct>
+		<Hex>DC</Hex>
+		<Bin>11011100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#220;</Html>
+		<Name>&amp;Uuml;</Name>
+		<Description>Latin capital letter U with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>221</Int>
+		<Oct>335</Oct>
+		<Hex>DD</Hex>
+		<Bin>11011101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#221;</Html>
+		<Name>&amp;Yacute;</Name>
+		<Description>Latin capital letter Y with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>222</Int>
+		<Oct>336</Oct>
+		<Hex>DE</Hex>
+		<Bin>11011110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#222;</Html>
+		<Name>&amp;THORN;</Name>
+		<Description>Latin capital letter THORN</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>223</Int>
+		<Oct>337</Oct>
+		<Hex>DF</Hex>
+		<Bin>11011111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#223;</Html>
+		<Name>&amp;szlig;</Name>
+		<Description>Latin small letter sharp s - ess-zed</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>224</Int>
+		<Oct>340</Oct>
+		<Hex>E0</Hex>
+		<Bin>11100000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#224;</Html>
+		<Name>&amp;agrave;</Name>
+		<Description>Latin small letter a with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>225</Int>
+		<Oct>341</Oct>
+		<Hex>E1</Hex>
+		<Bin>11100001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#225;</Html>
+		<Name>&amp;aacute;</Name>
+		<Description>Latin small letter a with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>226</Int>
+		<Oct>342</Oct>
+		<Hex>E2</Hex>
+		<Bin>11100010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#226;</Html>
+		<Name>&amp;acirc;</Name>
+		<Description>Latin small letter a with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>227</Int>
+		<Oct>343</Oct>
+		<Hex>E3</Hex>
+		<Bin>11100011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#227;</Html>
+		<Name>&amp;atilde;</Name>
+		<Description>Latin small letter a with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>228</Int>
+		<Oct>344</Oct>
+		<Hex>E4</Hex>
+		<Bin>11100100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#228;</Html>
+		<Name>&amp;auml;</Name>
+		<Description>Latin small letter a with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>229</Int>
+		<Oct>345</Oct>
+		<Hex>E5</Hex>
+		<Bin>11100101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#229;</Html>
+		<Name>&amp;aring;</Name>
+		<Description>Latin small letter a with ring above</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>230</Int>
+		<Oct>346</Oct>
+		<Hex>E6</Hex>
+		<Bin>11100110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#230;</Html>
+		<Name>&amp;aelig;</Name>
+		<Description>Latin small letter ae</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>231</Int>
+		<Oct>347</Oct>
+		<Hex>E7</Hex>
+		<Bin>11100111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#231;</Html>
+		<Name>&amp;ccedil;</Name>
+		<Description>Latin small letter c with cedilla</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>232</Int>
+		<Oct>350</Oct>
+		<Hex>E8</Hex>
+		<Bin>11101000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#232;</Html>
+		<Name>&amp;egrave;</Name>
+		<Description>Latin small letter e with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>233</Int>
+		<Oct>351</Oct>
+		<Hex>E9</Hex>
+		<Bin>11101001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#233;</Html>
+		<Name>&amp;eacute;</Name>
+		<Description>Latin small letter e with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>234</Int>
+		<Oct>352</Oct>
+		<Hex>EA</Hex>
+		<Bin>11101010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#234;</Html>
+		<Name>&amp;ecirc;</Name>
+		<Description>Latin small letter e with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>235</Int>
+		<Oct>353</Oct>
+		<Hex>EB</Hex>
+		<Bin>11101011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#235;</Html>
+		<Name>&amp;euml;</Name>
+		<Description>Latin small letter e with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>236</Int>
+		<Oct>354</Oct>
+		<Hex>EC</Hex>
+		<Bin>11101100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#236;</Html>
+		<Name>&amp;igrave;</Name>
+		<Description>Latin small letter i with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>237</Int>
+		<Oct>355</Oct>
+		<Hex>ED</Hex>
+		<Bin>11101101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#237;</Html>
+		<Name>&amp;iacute;</Name>
+		<Description>Latin small letter i with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>238</Int>
+		<Oct>356</Oct>
+		<Hex>EE</Hex>
+		<Bin>11101110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#238;</Html>
+		<Name>&amp;icirc;</Name>
+		<Description>Latin small letter i with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>239</Int>
+		<Oct>357</Oct>
+		<Hex>EF</Hex>
+		<Bin>11101111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#239;</Html>
+		<Name>&amp;iuml;</Name>
+		<Description>Latin small letter i with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>240</Int>
+		<Oct>360</Oct>
+		<Hex>F0</Hex>
+		<Bin>11110000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#240;</Html>
+		<Name>&amp;eth;</Name>
+		<Description>Latin small letter eth</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>241</Int>
+		<Oct>361</Oct>
+		<Hex>F1</Hex>
+		<Bin>11110001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#241;</Html>
+		<Name>&amp;ntilde;</Name>
+		<Description>Latin small letter n with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>242</Int>
+		<Oct>362</Oct>
+		<Hex>F2</Hex>
+		<Bin>11110010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#242;</Html>
+		<Name>&amp;ograve;</Name>
+		<Description>Latin small letter o with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>243</Int>
+		<Oct>363</Oct>
+		<Hex>F3</Hex>
+		<Bin>11110011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#243;</Html>
+		<Name>&amp;oacute;</Name>
+		<Description>Latin small letter o with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>244</Int>
+		<Oct>364</Oct>
+		<Hex>F4</Hex>
+		<Bin>11110100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#244;</Html>
+		<Name>&amp;ocirc;</Name>
+		<Description>Latin small letter o with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>245</Int>
+		<Oct>365</Oct>
+		<Hex>F5</Hex>
+		<Bin>11110101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#245;</Html>
+		<Name>&amp;otilde;</Name>
+		<Description>Latin small letter o with tilde</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>246</Int>
+		<Oct>366</Oct>
+		<Hex>F6</Hex>
+		<Bin>11110110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#246;</Html>
+		<Name>&amp;ouml;</Name>
+		<Description>Latin small letter o with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>247</Int>
+		<Oct>367</Oct>
+		<Hex>F7</Hex>
+		<Bin>11110111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#247;</Html>
+		<Name>&amp;divide;</Name>
+		<Description>Division sign</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>248</Int>
+		<Oct>370</Oct>
+		<Hex>F8</Hex>
+		<Bin>11111000</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#248;</Html>
+		<Name>&amp;oslash;</Name>
+		<Description>Latin small letter o with slash</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>249</Int>
+		<Oct>371</Oct>
+		<Hex>F9</Hex>
+		<Bin>11111001</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#249;</Html>
+		<Name>&amp;ugrave;</Name>
+		<Description>Latin small letter u with grave</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>250</Int>
+		<Oct>372</Oct>
+		<Hex>FA</Hex>
+		<Bin>11111010</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#250;</Html>
+		<Name>&amp;uacute;</Name>
+		<Description>Latin small letter u with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>251</Int>
+		<Oct>373</Oct>
+		<Hex>FB</Hex>
+		<Bin>11111011</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#251;</Html>
+		<Name>&amp;ucirc;</Name>
+		<Description>Latin small letter u with circumflex</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>252</Int>
+		<Oct>374</Oct>
+		<Hex>FC</Hex>
+		<Bin>11111100</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#252;</Html>
+		<Name>&amp;uuml;</Name>
+		<Description>Latin small letter u with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>253</Int>
+		<Oct>375</Oct>
+		<Hex>FD</Hex>
+		<Bin>11111101</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#253;</Html>
+		<Name>&amp;yacute;</Name>
+		<Description>Latin small letter y with acute</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>254</Int>
+		<Oct>376</Oct>
+		<Hex>FE</Hex>
+		<Bin>11111110</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#254;</Html>
+		<Name>&amp;thorn;</Name>
+		<Description>Latin small letter thorn</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+	<AsciiMap>
+		<Int>255</Int>
+		<Oct>377</Oct>
+		<Hex>FF</Hex>
+		<Bin>11111111</Bin>
+		<Symbol>�</Symbol>
+		<Html>&amp;#255;</Html>
+		<Name>&amp;yuml;</Name>
+		<Description>Latin small letter y with diaeresis</Description>
+		<Printable>true</Printable>
+		<IsAlpha>false</IsAlpha>
+		<IsNumeric>false</IsNumeric>
+	</AsciiMap>
+</ArrayOfAsciiMap>

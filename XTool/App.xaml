@@ -1,0 +1,309 @@
+﻿<Application x:Class="XTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="theme/brush.xaml"/>
+                <ResourceDictionary Source="theme/DataTemplates.xaml"/>
+                <ResourceDictionary Source="theme/style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
+                <Setter Property="OverridesDefaultStyle" Value="true" />
+                <Setter Property="HasDropShadow" Value="True" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToolTip">
+                            <Border>
+                                <ContentPresenter Margin="5"/>
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+
+            
+        </ResourceDictionary>
+        <!--<ResourceDictionary>-->
+
+
+
+
+
+
+
+
+        <!--<Style TargetType="{x:Type TextBlock}">
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Foreground" Value="BlueViolet"/>
+                <Setter Property="Opacity" Value="0.5"/>
+            </Style>
+            <Style TargetType="{x:Type TreeView}">
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+
+            <Style TargetType="{x:Type TreeViewItem}">
+                <Style.Resources>
+
+                </Style.Resources>
+                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"></Setter>
+                <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}"></Setter>
+                <Setter Property="FontWeight" Value="Normal"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+
+            <!--<Style x:Key="CommandButton" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock><ContentPresenter/></TextBlock>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="Gray" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Foreground" Value="Lime" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Foreground" Value="Gainsboro"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+
+            <!--<Style TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock><ContentPresenter/></TextBlock>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="Blue" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="true">
+                        <Setter Property="Foreground" Value="ForestGreen" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="false">
+                        <Setter Property="Foreground" Value="Gainsboro"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+
+            <!--<Style TargetType="{x:Type GridSplitter}">
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="ShowsPreview" Value="True"/>
+                <Setter Property="Width" Value="6"/>
+                <Setter Property="Margin" Value="0,75"/>
+            </Style>-->
+
+            <!--<Style TargetType="{x:Type ListBoxItem}">
+            <Style.Resources>
+            </Style.Resources>
+                <Setter Property="BorderBrush" Value="White"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#B8B8B8"/>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                        <Setter Property="Background" Value="#E0E0E0"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                        <Setter Property="Background" Value="#EBEBEB"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                        <Setter Property="Background" Value="#B2B4BF"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="3">
+                        <Setter Property="Background" Value="#E6E6E6"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="4">
+                        <Setter Property="Background" Value="#B2B4BF"></Setter>
+                    </Trigger>
+                    <Trigger Property="ItemsControl.AlternationIndex" Value="5">
+                        <Setter Property="Background" Value="#B2B4BF"></Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>-->
+
+
+            <!--<Style TargetType="{x:Type TabControl}" x:Key="viewTabTop">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                <Setter Property="BorderThickness" Value="10"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource TabControlNormalBorderBrush}"/>
+                <Setter Property="Background" Value="{DynamicResource StandardLight}"/>
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabControl}">
+
+                            <Grid ClipToBounds="True" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="3"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Border Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="Auto" Grid.Row="0" Background="Transparent">
+                                    <TabPanel x:Name="HeaderPanel" HorizontalAlignment="Left"
+                                      VerticalAlignment="Center" IsItemsHost="true" Grid.Row="1" KeyboardNavigation.TabIndex="1"/>
+                                </Border>
+
+                                <Grid Grid.Row="2" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Border x:Name="BorderOut" VerticalAlignment="Stretch">
+                                        <Border x:Name="BorderIn" VerticalAlignment="Stretch" Background="#00000000" >
+                                            <Grid>
+                                                <Border Background="{DynamicResource StandardLight}" Opacity="0.8" VerticalAlignment="Stretch"/>
+                                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                            </Grid>
+                                        </Border>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+
+                        </ControlTemplate>
+
+
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+
+
+            <!--<Style TargetType="{x:Type TabControl}" x:Key="viewTab">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+
+                <Setter Property="BorderThickness" Value="10"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource TabControlNormalBorderBrush}"/>
+                <Setter Property="Background" Value="{DynamicResource StandardLight}"/>
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabControl}">
+
+                            <Grid ClipToBounds="True" SnapsToDevicePixels="true" KeyboardNavigation.TabNavigation="Local">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="3"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Border Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="Auto" Grid.Row="2" Background="Transparent">
+                                    <TabPanel x:Name="HeaderPanel" HorizontalAlignment="Left"
+                                      VerticalAlignment="Center" IsItemsHost="true" Grid.Row="1" KeyboardNavigation.TabIndex="1"/>
+                                </Border>
+
+                                <Grid Grid.Column="0" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Border x:Name="BorderOut" VerticalAlignment="Stretch">
+                                        <Border x:Name="BorderIn" VerticalAlignment="Stretch" Background="#00000000" >
+                                            <Grid>
+                                                <Border Background="{DynamicResource StandardLight}" Opacity="0.8" VerticalAlignment="Stretch"/>
+                                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
+                                            </Grid>
+                                        </Border>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+
+                        </ControlTemplate>
+
+
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+
+            <!--<Style TargetType="{x:Type TabItem}" x:Key="viewTabItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabItem}">
+                            <Border Name="Border" Margin="10,2,0,2" CornerRadius="15" Background="#E0E0E0" BorderBrush="Transparent" BorderThickness="1" >
+                                <Grid x:Name="grid" MinWidth="115" MinHeight="25">
+
+                                    <ContentPresenter x:Name="ContentSite"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      ContentSource="Header"
+                                      RecognizesAccessKey="True"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="#1D568B" />
+                                    <Setter Property="Foreground" Value="#EEEEEE" />
+                                </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="BorderBrush" Value="WhiteSmoke"/>
+                                <Setter Property="Foreground" Value="LightGray"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="#1D568B" />
+                                <Setter Property="Foreground" Value="#EEEEEE" />
+                            </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>-->
+
+ 
+
+            <!--<ResourceDictionary.MergedDictionaries>-->
+                <!--<ResourceDictionary Source="theme/DataTemplates.xaml"/>
+                <ResourceDictionary Source="theme/Brushes.xaml"/>-->
+                <!--<ResourceDictionary Source="theme/Styles.xaml"/>-->
+
+                <!--<ResourceDictionary>
+                    <Style x:Key="LinkButton" TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <TextBlock><ContentPresenter/></TextBlock>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Foreground" Value="Blue" />
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="ForestGreen" />
+                                --><!--<Setter Property="FontWeight" Value="Bold"/>--><!--
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="Gainsboro"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ResourceDictionary>-->
+
+            <!--</ResourceDictionary.MergedDictionaries>-->
+
+        <!--</ResourceDictionary>-->
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,89 @@
+﻿@{ bool b = false; }
+
+<div class="dt">
+	<h1></h1>
+	<table>
+		<thead>
+			<tr>
+				<th>FieldName</th>
+				<th>DataType</th>
+				<th>Max Length</th>
+				<th>Distinct Cnt</th>
+				<th>HasData</th>
+				<th>NoData</th>
+				<th>Record Cnt</th>
+			</tr>
+		</thead>
+		<tbody>
+@foreach(var @f in @Model.Fields)
+{
+b = !b;
+string target = @f.Name + "Detail";
+if(!b)
+{
+
+			@:<tr>
+}
+else
+{
+			@:<tr class="alt">
+}
+				<td>@target</td>
+				<td>@f.Datatype</td>
+				<td class="data-numeric">@f.MaxLength</td>
+				<td class="data-numeric">@f.DistinctCount</td>
+				<td class="data-numeric">@f.HasData</td>
+				<td class="data-numeric">@f.HasNoData</td>
+				<td class="data-numeric">@Model.RecordCount</td>
+			</tr>				
+}	
+		</tbody>
+	</table>
+</div>
+
+@foreach(var @f in @Model.Fields)
+{
+<h2>@f.Name</h2>
+<div class="dt"><a name="@f.Name"></a>
+	<table>
+		<thead>			
+			<tr>
+				<th>Key</th>
+				<th>Count</th>
+				<th>Pct</th>
+			</tr>
+		</thead>
+		<tbody>
+@foreach(var @ih in @f.Items)
+{
+b = !b;
+if(!b)
+{
+
+			<text><tr></text>
+}
+else
+{
+			<text><tr class="alt"></text>
+}
+				<td>@ih.Key</td>
+				<td class="data-numeric">@ih.Count</td>
+				<td class="data-numeric">@ih.Percent</td>
+			</tr>				
+}			
+		</tbody>
+	</table>
+</div>
+}
+
+
+@functions{
+
+
+	string Anchor(string name, string targetName string display)
+	{
+		return String.Format("<a name=\"{0}\" href=\"#\" >{0}</a>,", name, targetName, display);
+	}
+
+
+}

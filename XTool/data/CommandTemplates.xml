@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCommandTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CommandTemplate xsi:type="MySqlCommandTemplate" id="e4befc1a-a1c7-474f-9c20-13c671b919b6" name="MySql Tables-Columns" groupName="groupName" provider="MySql" templateType="System">
+    <Description>desc</Description>
+    <Command> SELECT TABLE_SCHEMA AS Catalog, '{catalog}' as TableSchema, TABLE_NAME as TableName, COLUMN_NAME as ColumnName, ORDINAL_POSITION AS OrdinalPosition, COLUMN_DEFAULT as DefaultValue, CASE WHEN IS_NULLABLE = 'YES' THEN 1 ELSE 0 END AS IsNullible, DATA_TYPE AS Datatype, CHARACTER_MAXIMUM_LENGTH AS MaxLength, NULL AS IsComputed,  NULL AS ColumnLength, NULL AS IsIdentity, NULL AS IsRowGuidColumn, CASE WHEN COLUMN_KEY = 'PRI' THEN 1 ELSE 0 END AS IsPrimaryKey, CASE WHEN COLUMN_KEY = 'MUL' THEN 1 ELSE 0 END AS IsForeignKey, CASE WHEN COLUMN_KEY = 'UNI' THEN 1 ELSE 0 END AS HasUniqueConstraint FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '{catalog}' and TABLE_NAME like '%{tableName}%' ORDER BY TABLE_NAME, ORDINAL_POSITION</Command>
+  </CommandTemplate>
+  <CommandTemplate xsi:type="SqlServerCommandTemplate" id="26afcc07-af76-49e9-9425-73cfde8fb36d" name="All Tables" groupName="groupName" provider="SqlServer" templateType="System">
+    <Description>desc</Description>
+    <Command>select * from sys.objects where type = 'u'</Command>
+  </CommandTemplate>
+  <CommandTemplate xsi:type="SqlServerCommandTemplate" id="315b3dc7-5aa1-412e-b224-b51687f7b827" name="Some Tables" groupName="groupName" provider="SqlServer" templateType="System">
+    <Description>desc</Description>
+    <Command>select * from sys.objects where type = 'u'</Command>
+  </CommandTemplate>
+  <CommandTemplate xsi:type="MongoDbCommandTemplate" id="704c9be2-1201-42da-ad2d-31c68e2c985c" name="Most Tables" groupName="groupName" provider="MongoDb" templateType="System">
+    <Description>desc</Description>
+    <Command>select * from sys.objects where type = 'u'</Command>
+  </CommandTemplate>
+  <CommandTemplate xsi:type="MongoDbCommandTemplate" id="de97424d-2e95-424a-b67f-c638025a4ed2" name="One Table" groupName="groupName" provider="MongoDb" templateType="System">
+    <Description>desc</Description>
+    <Command>select * from sys.objects where type = 'u'</Command>
+  </CommandTemplate>
+</ArrayOfCommandTemplate>

@@ -1,0 +1,3935 @@
+﻿{
+  "machine": "HNLAP001659",
+  "config": "api",
+  "mode": "DEBUG",
+  "registration": [
+    {
+      "order": 1,
+      "name": "Bookmark",
+      "methods": [
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/media/{mediaId}/bookmarks/{token}?f={f}&p={p}",
+          "controller": "Bookmark",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaId",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "f",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "p",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/media/{mediaId}/bookmarks/{token}",
+          "controller": "Bookmark",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaId",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "name": "Media",
+      "methods": [
+        "GetPartUrl",
+        "GetPartUrl"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/media/{mediaId}/parts/{partId}/download-url?s3={s3}&f={f}&t={t}",
+          "controller": "Media",
+          "controllerMethod": "GetPartUrl",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaId",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "partId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "s3",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "f",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "t",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/media/{mediaId}/parts/{partId}/download-url?tId={tId}&expDt={expDt}&f={f}&ff={ff}&acsRId={acsRId}",
+          "controller": "Media",
+          "controllerMethod": "GetPartUrl",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "partId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "expDt",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "f",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "ff",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "acsRId",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "name": "PatronTitle",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/titles/{isbn}/{token}",
+          "controller": "PatronTitle",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "name": "PatronCheckout",
+      "methods": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/transactions/checkouts/{token}",
+          "controller": "PatronCheckout",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/transactions/checkouts/{token}",
+          "controller": "PatronCheckout",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "POST",
+          "pattern": "v{version}/transactions/checkouts/{token}?days={days}",
+          "controller": "PatronCheckout",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "days",
+              "type": "Nullable`1",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/transactions/checkouts/{token}",
+          "controller": "PatronCheckout",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "name": "PatronCheckoutHistory",
+      "methods": [
+        "Get",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/transactions/history/{token}?pageIndex={pageIndex}&pageSize={pageSize}&sort={sort}",
+          "controller": "PatronCheckoutHistory",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            },
+            {
+              "name": "sort",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/transactions/history/{token}",
+          "controller": "PatronCheckoutHistory",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "name": "PatronHold",
+      "methods": [
+        "Get",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/transactions/holds/{token}",
+          "controller": "PatronHold",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/transactions/holds/{token}",
+          "controller": "PatronHold",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/transactions/holds/{token}",
+          "controller": "PatronHold",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "name": "PatronWishlist",
+      "methods": [
+        "Get",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/transactions/wishlist/{token}",
+          "controller": "PatronWishlist",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/transactions/wishlist/{token}",
+          "controller": "PatronWishlist",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/transactions/wishlist/{token}",
+          "controller": "PatronWishlist",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "name": "PartnerCheckout",
+      "methods": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete",
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/checkouts/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/checkouts/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/checkouts/{token}?days={days}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "days",
+              "type": "Nullable`1",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/checkouts/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/history/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/history/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/history/{token}?days={days}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "days",
+              "type": "Nullable`1",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/history/{token}",
+          "controller": "PartnerCheckout",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "name": "PartnerCheckoutHistory",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/history/{token}?pageIndex={pageIndex}&pageSize={pageSize}&sort={sort}",
+          "controller": "PartnerCheckoutHistory",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            },
+            {
+              "name": "sort",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "name": "PartnerHold",
+      "methods": [
+        "Get",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/holds/{token}",
+          "controller": "PartnerHold",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/holds/{token}",
+          "controller": "PartnerHold",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/holds/{token}",
+          "controller": "PartnerHold",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "name": "PartnerWishlist",
+      "methods": [
+        "Get",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/wishlist/{token}",
+          "controller": "PartnerWishlist",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/wishlist/{token}",
+          "controller": "PartnerWishlist",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/wishlist/{token}",
+          "controller": "PartnerWishlist",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "name": "PartnerBook",
+      "methods": [
+        "Post",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryid}/patrons/{patronid}/books/{token}/{isbn}?days={days}",
+          "controller": "PartnerBook",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "days",
+              "type": "Nullable`1",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryid}/patrons/{patronid}/books/{token}/{isbn}",
+          "controller": "PartnerBook",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryid}/patrons/{patronid}/books/{token}/{isbn}",
+          "controller": "PartnerBook",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronid",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "name": "PartnerMagazineCheckout",
+      "methods": [
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/patron-magazines/{issueId}",
+          "controller": "PartnerMagazineCheckout",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "issueId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "name": "PatronBookHistory",
+      "methods": [
+        "Get",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/patron-books/history/{interestType}/{mediaType}?pageIndex={pageIndex}&pageSize={pageSize}&sort={sort}",
+          "controller": "PatronBookHistory",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "interestType",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaType",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "101"
+            },
+            {
+              "name": "sort",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "beginon-desc"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/patron-books/history/{interestType}/{mediaType}?token={token}",
+          "controller": "PatronBookHistory",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "interestType",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaType",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "name": "PatronBook",
+      "methods": [
+        "Post",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/patron-books/{token}/{isbn}?days={days}",
+          "controller": "PatronBook",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "days",
+              "type": "Nullable`1",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/patron-books/{token}/{isbn}",
+          "controller": "PatronBook",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/patron-books/{token}/{isbn}",
+          "controller": "PatronBook",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "name": "PredictiveText",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/suggestive/{model}",
+          "controller": "PredictiveText",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "model",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "name": "PatronMagazineSearch",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/search/emagazine",
+          "controller": "PatronMagazineSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "name": "PatronBookSearch",
+      "methods": [
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/search/{tokens}",
+          "controller": "PatronBookSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/search/",
+          "controller": "PatronBookSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "name": "PartnerMagazineSearch",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/search/emagazine",
+          "controller": "PartnerMagazineSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "name": "PartnerBookSearch",
+      "methods": [
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/search/",
+          "controller": "PartnerBookSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/search/{tokens}",
+          "controller": "PartnerBookSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "name": "PatronMagazine",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/magazines/{magazineId}/issues?pageIndex={pageIndex}&pageSize={pageSize}",
+          "controller": "PatronMagazine",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "magazineId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "101"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "name": "Recommendation",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/recommendations",
+          "controller": "Recommendation",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "name": "Rating",
+      "methods": [
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/ratings",
+          "controller": "Rating",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/ratings/{token}",
+          "controller": "Rating",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "name": "Library",
+      "methods": [
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries",
+          "controller": "Library",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{id}",
+          "controller": "Library",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "name": "Country",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/countries",
+          "controller": "Country",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "name": "Token",
+      "methods": [
+        "Put"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/tokens",
+          "controller": "Token",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "request",
+              "type": "HttpRequestMessage",
+              "source": "Unknown"
+            },
+            {
+              "name": "requestToken",
+              "type": "RequestToken",
+              "source": "FromBody"
+            },
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "name": "PartnerTitle",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/titles/{isbn}/{token}",
+          "controller": "PartnerTitle",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "name": "LibraryMedia",
+      "methods": [
+        "GetDates",
+        "GetDelta",
+        "GetDelta",
+        "GetLibraryAvailability",
+        "GetLibraryMedia"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/media/delta/datesAvailable",
+          "controller": "LibraryMedia",
+          "controllerMethod": "GetDates",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/media/delta?begin={begin}&end={end}",
+          "controller": "LibraryMedia",
+          "controllerMethod": "GetDelta",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "begin",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "end",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/media/delta?date={date}",
+          "controller": "LibraryMedia",
+          "controllerMethod": "GetDelta",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "date",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/media/{token}/availability",
+          "controller": "LibraryMedia",
+          "controllerMethod": "GetLibraryAvailability",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/media/{token}",
+          "controller": "LibraryMedia",
+          "controllerMethod": "GetLibraryMedia",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "name": "PatronUserAccount",
+      "methods": [
+        "Post",
+        "GetAll",
+        "GetOne",
+        "Get",
+        "Put",
+        "GetOne",
+        "Put"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/account?libraryId={libraryId}",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "newUserAccountCandidate",
+              "type": "UserAccount",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/account?libraryId={libraryId}",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "GetAll",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "GET",
+          "pattern": "v{version}/account?libraryId={libraryId}&patronId={patronId}",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "GetOne",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "GET",
+          "pattern": "v{version}/account",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/account",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "changedAccount",
+              "type": "UserAccount",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "GetOne",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/patrons",
+          "controller": "PatronUserAccount",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "changedAccount",
+              "type": "UserAccount",
+              "source": "FromBody"
+            },
+            {
+              "name": "libraryId",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "name": "ExcludedTitle",
+      "methods": [
+        "Get",
+        "Post",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/titles/exclusions/{token}",
+          "controller": "ExcludedTitle",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/libraries/{libraryId}/titles/exclusions/{token}?isbn={isbn}",
+          "controller": "ExcludedTitle",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/titles/exclusions/{token}?isbn={isbn}",
+          "controller": "ExcludedTitle",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "name": "License",
+      "methods": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/checkouts/{transactionId}/license",
+          "controller": "License",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "transactionId",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/checkouts/{transactionId}/license",
+          "controller": "License",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "transactionId",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/checkouts/{transactionId}/license",
+          "controller": "License",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "transactionId",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "name": "Session",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/sessions/{sessionId}",
+          "controller": "Session",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "sessionId",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "name": "Rpc",
+      "methods": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/rpc/{tokens}",
+          "controller": "Rpc",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/rpc/{tokens}",
+          "controller": "Rpc",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/rpc/{tokens}",
+          "controller": "Rpc",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 34,
+      "name": "PatronMobileConfig",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/mobile/config/{token}",
+          "controller": "PatronMobileConfig",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "name": "Facet",
+      "methods": [
+        "GetBookFacets",
+        "GetMagazineFacets",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/facets/book/{facetToken}",
+          "controller": "Facet",
+          "controllerMethod": "GetBookFacets",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "facetToken",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/facets/magazine/{facetToken}",
+          "controller": "Facet",
+          "controllerMethod": "GetMagazineFacets",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "facetToken",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "GET",
+          "pattern": "v{version}/facets/{facetToken}",
+          "controller": "Facet",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "facetToken",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "name": "MediaManager",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/media-manager/ocdf?titleName={titleName}&isbn={isbn}",
+          "controller": "MediaManager",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "titleName",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 37,
+      "name": "Logout",
+      "methods": [
+        "Post",
+        "Post"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/site/logout",
+          "controller": "Logout",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "request",
+              "type": "HttpRequestMessage",
+              "source": "Unknown"
+            },
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "site/logout",
+          "controller": "Logout",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "request",
+              "type": "HttpRequestMessage",
+              "source": "Unknown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 38,
+      "name": "HighlightedAdvertisement",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "site/tenants/{libraryId}/highlighted-items/e-advertisement",
+          "controller": "HighlightedAdvertisement",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 39,
+      "name": "HighlightedItem",
+      "methods": [
+        "Post",
+        "Get",
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "site/tenants/{libraryId}/highlighted-items/{token}",
+          "controller": "HighlightedItem",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "data",
+              "type": "HighlightPostModel",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "site/tenants/{libraryId}/highlighted-items",
+          "controller": "HighlightedItem",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "GET",
+          "pattern": "site/tenants/{libraryId}/highlighted-items/{token}",
+          "controller": "HighlightedItem",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "PUT",
+          "pattern": "site/tenants/{libraryId}/highlighted-items",
+          "controller": "HighlightedItem",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "model",
+              "type": "HighlightPatchModel",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "DELETE",
+          "pattern": "site/tenants/{libraryId}/highlighted-items/{token}",
+          "controller": "HighlightedItem",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 40,
+      "name": "ItemGroup",
+      "methods": [
+        "Get",
+        "Put"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "site/tenants/{libraryId}/item-groups",
+          "controller": "ItemGroup",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "site/tenants/{libraryId}/item-groups",
+          "controller": "ItemGroup",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "model",
+              "type": "ItemGroupPutModel",
+              "source": "FromBody"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 41,
+      "name": "CuratedList",
+      "methods": [
+        "Get",
+        "Get",
+        "Put",
+        "Delete",
+        "ClearCache"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "site/lists/{listName}",
+          "controller": "CuratedList",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "listName",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "site/lists/{listName}/{token}",
+          "controller": "CuratedList",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "listName",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "PUT",
+          "pattern": "site/lists/{listName}?tokens={tokens}",
+          "controller": "CuratedList",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "listName",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "DELETE",
+          "pattern": "site/lists/{listName}?tokens={tokens}",
+          "controller": "CuratedList",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "tokens",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "listName",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "POST",
+          "pattern": "site/lists/{listName}?scope={scope}",
+          "controller": "CuratedList",
+          "controllerMethod": "ClearCache",
+          "parameters": [
+            {
+              "name": "scope",
+              "type": "ScopeOption",
+              "source": "FromUri"
+            },
+            {
+              "name": "listName",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 42,
+      "name": "Config",
+      "methods": [
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "site/config/{token}",
+          "controller": "Config",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/site/config/{token}",
+          "controller": "Config",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 43,
+      "name": "Settings",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/tenants/{tenantId}/settings/{settingType}",
+          "controller": "Settings",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "tenantId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "settingType",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 44,
+      "name": "UserSearch",
+      "methods": [
+        "Post",
+        "Get",
+        "Delete",
+        "Post",
+        "Get",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "site/user/searches",
+          "controller": "UserSearch",
+          "controllerMethod": "Post"
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "site/user/searches",
+          "controller": "UserSearch",
+          "controllerMethod": "Get"
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "site/user/searches/{id}",
+          "controller": "UserSearch",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "POST",
+          "pattern": "v{version}/site/user/searches",
+          "controller": "UserSearch",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "httpMethod": "GET",
+          "pattern": "v{version}/site/user/searches",
+          "controller": "UserSearch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/site/user/searches/{id}",
+          "controller": "UserSearch",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "version",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 45,
+      "name": "Featured",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/featured/{feature}/{token}?scope={scope}&ownershipStatus={ownershipStatus}",
+          "controller": "Featured",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "feature",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "scope",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            },
+            {
+              "name": "ownershipStatus",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 46,
+      "name": "Holding",
+      "methods": [
+        "Get",
+        "Get",
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/holding/{isbn}?libraryId={libraryId}",
+          "controller": "Holding",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "POST",
+          "pattern": "v{version}/holding?libraryId={libraryId}",
+          "controller": "Holding",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "model",
+              "type": "HoldingModel",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "GET",
+          "pattern": "v{version}/holding/{isbn}",
+          "controller": "Holding",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 47,
+      "name": "Products",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/products/{isbn}",
+          "controller": "Products",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "isbn",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 48,
+      "name": "CartLine",
+      "methods": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/cart/{id}",
+          "controller": "CartLine",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "id",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/cart",
+          "controller": "CartLine",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "cart",
+              "type": "CartLine",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/cart/{id}?productId={productId}",
+          "controller": "CartLine",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "id",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "productId",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 49,
+      "name": "LibraryBranch",
+      "methods": [
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/branch",
+          "controller": "LibraryBranch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/branch",
+          "controller": "LibraryBranch",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "data",
+              "type": "Dictionary`2",
+              "source": "FromBody"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/branch/{branchId}",
+          "controller": "LibraryBranch",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "branchId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 50,
+      "name": "PatronLibraryBranch",
+      "methods": [
+        "Get",
+        "Put"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patronbranch/{patronId}",
+          "controller": "PatronLibraryBranch",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/libraries/{libraryId}/patronbranch",
+          "controller": "PatronLibraryBranch",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "model",
+              "type": "LibraryPatronBranchModel",
+              "source": "FromBody"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 51,
+      "name": "PartnerMagazineIssue",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/magazines/{magazineId}/issues?pageIndex={pageIndex}&pageSize={pageSize}",
+          "controller": "PartnerMagazineIssue",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "magazineId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 52,
+      "name": "SpaConfig",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/web/config/{passKey}",
+          "controller": "SpaConfig",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "passKey",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 53,
+      "name": "NamedQuery",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "site/{queryname}/{mediaType}/{id}",
+          "controller": "NamedQuery",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "queryname",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaType",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "id",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 54,
+      "name": "PartnerResultset",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/result-set/{namedQuery}/{mediaType}",
+          "controller": "PartnerResultset",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "namedQuery",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaType",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 55,
+      "name": "PatronResultset",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/mobile/{namedQuery}/{mediaType}",
+          "controller": "PatronResultset",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "namedQuery",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "mediaType",
+              "type": "String",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 56,
+      "name": "PatronMagazineIssueMetadata",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/magazine-issues/{issueId}?channel={channel}",
+          "controller": "PatronMagazineIssueMetadata",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "issueId",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "channel",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 57,
+      "name": "PartnerMagazineHistory",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/patron-magazines/history?pageSize={pageSize}&pageIndex={pageIndex}&sort={sort}",
+          "controller": "PartnerMagazineHistory",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "101"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "sort",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "beginon-desc"
+            },
+            {
+              "name": "libraryId",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 58,
+      "name": "Test",
+      "methods": [
+        "Post",
+        "Get",
+        "Put",
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "POST",
+          "pattern": "v{version}/test/{token}/{message}?log={log}",
+          "controller": "Test",
+          "controllerMethod": "Post",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "message",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "log",
+              "type": "Boolean",
+              "source": "FromUri",
+              "defaultValue": "False"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "httpMethod": "GET",
+          "pattern": "v{version}/test/{token}/{message}?log={log}",
+          "controller": "Test",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "message",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "log",
+              "type": "Boolean",
+              "source": "FromUri",
+              "defaultValue": "False"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "httpMethod": "PUT",
+          "pattern": "v{version}/test/{token}/{message}?log={log}",
+          "controller": "Test",
+          "controllerMethod": "Put",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "message",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "log",
+              "type": "Boolean",
+              "source": "FromUri",
+              "defaultValue": "False"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/test/{token}/{message}?log={log}",
+          "controller": "Test",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "message",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "log",
+              "type": "Boolean",
+              "source": "FromUri",
+              "defaultValue": "False"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 59,
+      "name": "PatronMagazineHistory",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/patron-magazines/history?pageSize={pageSize}&pageIndex={pageIndex}&sort={sort}",
+          "controller": "PatronMagazineHistory",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "101"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "1"
+            },
+            {
+              "name": "sort",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "beginon-desc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 60,
+      "name": "PatronMagazineCheckout",
+      "methods": [
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/patron-magazines/{issueId}",
+          "controller": "PatronMagazineCheckout",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "issueId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 61,
+      "name": "PatronMagazineNotifications",
+      "methods": [
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/magazines/{magazineId}/notifications",
+          "controller": "PatronMagazineNotifications",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "magazineId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 62,
+      "name": "SystemConfiguration",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "system-config/{token}/{shape}",
+          "controller": "SystemConfiguration",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "shape",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 63,
+      "name": "WebSession",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/websession/{id}/{token}?pageSize={pageSize}&pageIndex={pageIndex}&marker={marker}",
+          "controller": "WebSession",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "pageSize",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "10"
+            },
+            {
+              "name": "pageIndex",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            },
+            {
+              "name": "marker",
+              "type": "Int32",
+              "source": "FromUri",
+              "defaultValue": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 64,
+      "name": "PartnerMagazineNotifications",
+      "methods": [
+        "Delete"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "DELETE",
+          "pattern": "v{version}/libraries/{libraryId}/patrons/{patronId}/magazines/{magazineId}/notifications",
+          "controller": "PartnerMagazineNotifications",
+          "controllerMethod": "Delete",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "patronId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "magazineId",
+              "type": "Int32",
+              "source": "FromUri"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 65,
+      "name": "PartnerMagazineIssueMetadata",
+      "methods": [
+        "Get"
+      ],
+      "endpoints": [
+        {
+          "order": 1,
+          "httpMethod": "GET",
+          "pattern": "v{version}/libraries/{libraryId}/magazine-issues/{issueId}?channel={channel}",
+          "controller": "PartnerMagazineIssueMetadata",
+          "controllerMethod": "Get",
+          "parameters": [
+            {
+              "name": "version",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "libraryId",
+              "type": "Int32",
+              "source": "FromUri"
+            },
+            {
+              "name": "issueId",
+              "type": "String",
+              "source": "FromUri"
+            },
+            {
+              "name": "channel",
+              "type": "String",
+              "source": "FromUri",
+              "defaultValue": "none"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

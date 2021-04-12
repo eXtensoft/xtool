@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="XTool.LogoffView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              Loaded="UserControl_Loaded" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="AuthorizationHeader" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="AuthorizationSubheader" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="Black">
+        <Rectangle>
+            <Rectangle.Fill>
+                <RadialGradientBrush GradientOrigin="0.5,0.85" Center="0.5,0.75" RadiusX="0.75" RadiusY="0.45">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="AliceBlue" Offset="0.15"/>
+                    <GradientStop Color="#336699" Offset="0.75"/>
+                    <GradientStop Color="#003D79" Offset="1"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel Margin="0,75">
+            <TextBlock Style="{StaticResource AuthorizationHeader}" Text="Thank-you for piloting the River Styx"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"/>
+            <TextBlock x:Name="txbSubheader" Margin="0,20,0,0" Style="{StaticResource AuthorizationSubheader}" Text="Saving workspace..."
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
+

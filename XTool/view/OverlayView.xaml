@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="XTool.OverlayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="OverlayBrush" Color="White" Opacity="0.5"/>
+        <SolidColorBrush x:Key="InnerOverlayBrush" Color="Gray" Opacity="0.75"/>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" >
+        <Canvas Background="{StaticResource ResourceKey=OverlayBrush}"/>
+        <Border Margin="40" CornerRadius="20" 
+                BorderBrush="{StaticResource ResourceKey=InnerOverlayBrush}" 
+                BorderThickness="4" Background="White">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" x:Name="grdOverlay" Grid.ColumnSpan="3"/>
+                <Button x:Name="hlbClose" 
+                        Style="{DynamicResource ResourceKey=LinkButton}" 
+                        Grid.Row="0" Grid.Column="2" 
+                        Visibility="{Binding}" 
+                         HorizontalAlignment="Right" 
+                         VerticalAlignment="Top" 
+                         Click="Button_Click" FontSize="24"
+                         Foreground="DarkGray" Margin="0,0,0,0"
+                         FontFamily="Wingdings" 
+                         Content="ý" />
+                <TextBlock x:Name="txbTitle"
+                    Foreground="DarkBlue" 
+                    FontWeight="Bold"
+                    Grid.Row="0" Grid.Column="1" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Visibility="Collapsed"/>
+                <Grid x:Name="grdHeaderLeft" Grid.Row="0" Grid.Column="0"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

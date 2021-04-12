@@ -1,0 +1,218 @@
+﻿<UserControl x:Class="XTool.XFGeneratorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Margin="20,10" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0" Text="Model Name:"/>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Text="Namespace:"/>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" Text="Connection:"/>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="6" Text="SprocPrefix:"/>
+            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=ToModelName}"/>
+            <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding Path=Namespace}"/>
+            <TextBox Grid.Column="2" Grid.Row="4" Text="{Binding Path=Connection}"/>
+            <TextBox Grid.Column="2" Grid.Row="6" Text="{Binding Path=SprocPrefix}"/>
+
+            <TextBlock HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" Text="Company:"/>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="4" Grid.Row="2" Text="Other:"/>
+            <TextBlock HorizontalAlignment="Right" Grid.Column="4" Grid.Row="4" Text="App Key:"/>
+            <TextBox Grid.Column="6" Grid.Row="0" Text="{Binding Path=Company}"/>
+            <TextBox Grid.Column="6" Grid.Row="2" Text="{Binding Path=Other}"/>
+            <TextBox Grid.Column="6" Grid.Row="4" Text="{Binding Path=AppContext}"/>
+            <Grid Grid.Column="2" Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Preview" Command="{Binding Path=PreviewCommand}"/>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="Output to Folder" Command="{Binding Path=OutputToFolderCommand}"/>
+                    <Button Content=" ... " Command="{Binding Path=SelectFolder}"/>
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+        <TabControl Grid.Row="1" Grid.Column="0" >
+            <TabItem Header="Fields">
+                <ListBox BorderThickness="0"
+                 ItemsSource="{Binding Path=Columns}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding Path=IsSelected}" Margin="5,0"/>
+                                <Image Source="../images/Db.Column.png"/>
+                                <TextBlock Text="{Binding Path=ToDisplay}"/>
+                            </StackPanel>
+
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+            <TabItem Header="Verbs">
+                <GroupBox DockPanel.Dock="Top">
+                    <StackPanel Margin="5,10">
+                        <TextBlock Text="{Binding Path=ModelActions}"/>
+                        <StackPanel Margin="5">
+                            <CheckBox Content="Post" Margin="10,5,5,2" Tag="Post" IsChecked="{Binding Path=IsPost}" />
+                            <CheckBox Content="Put" Margin="10,2" Tag="Put" IsChecked="{Binding Path=IsPut}" />
+                            <CheckBox Content="Delete" Margin="10,2" Tag="Delete" IsChecked="{Binding Path=IsDelete}" />
+                            <CheckBox Content="Get" Margin="10,2" Tag="Get" IsChecked="{Binding Path=IsGet}" />
+                            <CheckBox Content="GetAll" Margin="10,2" Tag="GetAll" IsChecked="{Binding Path=IsGetAll}" />
+                            <CheckBox Content="GetAllProjections" Margin="10,2" Tag="GetAllProjections" IsChecked="{Binding Path=IsGetAllProjections}" />
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </TabItem>
+        </TabControl>
+        <TabControl Grid.Row="1" Grid.Column="2">
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsSqlServer}"/>
+                        <TextBlock Text="ADO.Net"/>
+                    </StackPanel>
+
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TabControl>
+                        <TabItem Header="Interface">
+                            <TextBox x:Name="txbDataProviderInterface" Text="{Binding Path=DataProviderInterfaceText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                        </TabItem>
+                        <TabItem Header="Data Provider">
+                            <TextBox x:Name="txbSqlServer" Text="{Binding Path=SqlServerText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                        </TabItem>
+                    </TabControl>
+                    
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsModel}"/>
+                        <TextBlock Text="Model" />
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBox x:Name="txbOutputModel" Text="{Binding Path=ModelText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsMDGSproc}" />
+                        <TextBlock Text="MDG (sproc)" />
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBox x:Name="txbOutputSproc" Text="{Binding Path=MDGSproc}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsMDGInline}" />
+                        <TextBlock Text="MDG (inline sql)" />
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBox x:Name="txbOutputInlineSql" Text="{Binding Path=MDGInline}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsSproc}"/>
+                        <TextBlock Text="Sprocs"/>
+                    </StackPanel>
+
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBox x:Name="txbOutputStoredProcedures" Text="{Binding Path=SprocsText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions> 
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="1"  Text="Config"/> 
+                        <StackPanel Grid.Column="2" Grid.RowSpan="3" Orientation="Vertical">
+                            <CheckBox IsChecked="{Binding Path=IsConfigSproc}" Content="Sproc"/>
+                            <CheckBox IsChecked="{Binding Path=IsConfigText}" Content="Text"/>                            
+                        </StackPanel>                     
+                        
+                    </Grid>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBox x:Name="txbOutputConfig" Text="{Binding Path=ConfigText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                </TabItem.Content>
+            </TabItem>
+
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding Path=IsApi}"/>
+                        <TextBlock Text="Api Calls"/>
+                    </StackPanel>
+
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TabControl>
+                        <TabItem Header="DataService">
+                            <TextBox x:Name="txbApi" Text="{Binding Path=ApiText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                        </TabItem>
+                        <TabItem Header="Interface">
+                            <TextBox x:Name="txbApiInterface" Text="{Binding Path=ApiInterfaceText}" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Visible"/>
+                        </TabItem>
+                    </TabControl>
+                    
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>
+
