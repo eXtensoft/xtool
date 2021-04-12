@@ -121,9 +121,9 @@
     <Compile Include="view\encryption\DataEncryptionView.xaml.cs">
       <DependentUpon>DataEncryptionView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="model\log\ApiSession.cs" />
-    <Compile Include="model\log\LogSchema.cs" />
-    <Compile Include="view.model\log\ApiSessionViewModel.cs" />
+    <Compile Include="model\structured-log\ApiSession.cs" />
+    <Compile Include="model\structured-log\LogSchema.cs" />
+    <Compile Include="view.model\structured-log\ApiSessionViewModel.cs" />
     <Compile Include="view\logging\StatsView.xaml.cs">
       <DependentUpon>StatsView.xaml</DependentUpon>
     </Compile>
@@ -148,14 +148,14 @@
     <Compile Include="model\filtering\FilterProvider.cs" />
     <Compile Include="model\filtering\IFilterResolver.cs" />
     <Compile Include="model\filtering\PropertyFilterGroup.cs" />
-    <Compile Include="model\log\ApiError.cs" />
-    <Compile Include="model\log\ApiRequest.cs" />
-    <Compile Include="model\log\TypedItem.cs" />
-    <Compile Include="view.model\log\ApiErrorViewModel.cs" />
-    <Compile Include="view.model\log\ApiRequestViewModel.cs" />
-    <Compile Include="view.model\log\CyclopsConnectionViewModel.cs" />
-    <Compile Include="view.model\log\CyclopsWorkspaceViewModel.cs" />
-    <Compile Include="view.model\log\FacetViewModel.cs" />
+    <Compile Include="model\structured-log\ApiError.cs" />
+    <Compile Include="model\structured-log\ApiRequest.cs" />
+    <Compile Include="model\structured-log\TypedItem.cs" />
+    <Compile Include="view.model\structured-log\ApiErrorViewModel.cs" />
+    <Compile Include="view.model\structured-log\ApiRequestViewModel.cs" />
+    <Compile Include="view.model\structured-log\CyclopsConnectionViewModel.cs" />
+    <Compile Include="view.model\structured-log\CyclopsWorkspaceViewModel.cs" />
+    <Compile Include="view.model\structured-log\FacetViewModel.cs" />
     <Compile Include="view\logging\LogApiRequestView.xaml.cs">
       <DependentUpon>LogApiRequestView.xaml</DependentUpon>
     </Compile>
@@ -174,9 +174,9 @@
     <Compile Include="model\connection\templates\SqlServerCommandTemplate.cs" />
     <Compile Include="model\connection\templates\TemplateTypeOption.cs" />
     <Compile Include="model\filters\NoFilterGroup.cs" />
-    <Compile Include="model\log\CyclopsConnection.cs" />
-    <Compile Include="model\log\Workspace.cs" />
-    <Compile Include="model\log\Selection.cs" />
+    <Compile Include="model\structured-log\CyclopsConnection.cs" />
+    <Compile Include="model\structured-log\Workspace.cs" />
+    <Compile Include="model\structured-log\Selection.cs" />
     <Compile Include="model\time.keeper\Note.cs" />
     <Compile Include="model\time.keeper\Resource.cs" />
     <Compile Include="model\time.keeper\Task.cs" />
@@ -190,7 +190,7 @@
     </Compile>
     <Compile Include="time.keeper\TimekeeperManager.cs" />
     <Compile Include="TimeKeeperProvider.cs" />
-    <Compile Include="view.model\log\SelectionViewModel.cs" />
+    <Compile Include="view.model\structured-log\SelectionViewModel.cs" />
     <Compile Include="view.model\TimeKeeperWorkspaceViewModel.cs" />
     <Compile Include="view\TimeEntryView.xaml.cs">
       <DependentUpon>TimeEntryView.xaml</DependentUpon>
